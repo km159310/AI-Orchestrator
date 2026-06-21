@@ -1,0 +1,6 @@
+.env
+chroma_store/
+activity_log.jsonl
+__pycache__/
+*.pyc
+.venv/

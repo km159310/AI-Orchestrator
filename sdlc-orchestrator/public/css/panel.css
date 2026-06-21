@@ -1,0 +1,266 @@
+/* ── Main Panel ──────────────────────────────────────────── */
+.main-panel {
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--r16);
+  overflow: hidden;
+  animation: fadeUp .4s ease;
+  box-shadow: var(--shadow-sm);
+}
+
+.panel-head {
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 12px;
+  background: var(--bg2);
+}
+
+.panel-head-icon {
+  width: 36px; height: 36px;
+  border-radius: var(--r8);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  background: var(--bg1);
+  color: var(--cyan);
+  box-shadow: var(--shadow-xs);
+}
+
+.panel-title {
+  font-family: var(--sans);
+  font-size: 16px;
+  font-weight: 700;
+  flex: 1;
+  letter-spacing: -.2px;
+  color: var(--text1);
+}
+
+.panel-body { padding: 1.5rem; }
+
+/* ── Phase hero banner ───────────────────────────────────── */
+.phase-hero {
+  position: relative;
+  margin: -1.5rem -1.5rem 1.25rem;
+  padding: 1.25rem 1.75rem;
+  display: flex;
+  align-items: center;
+  gap: 1.125rem;
+  overflow: hidden;
+  color: #ffffff;
+  min-height: 96px;
+  isolation: isolate;
+}
+.phase-hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    radial-gradient(circle, rgba(255, 255, 255, .14) 1px, transparent 1px);
+  background-size: 18px 18px;
+  pointer-events: none;
+  z-index: 0;
+}
+.phase-hero::after {
+  content: '';
+  position: absolute;
+  right: -40px; top: -40px;
+  width: 180px; height: 180px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, .08);
+  pointer-events: none;
+  z-index: 0;
+}
+.phase-hero-icon {
+  width: 56px; height: 56px;
+  background: rgba(255, 255, 255, .20);
+  border: 1px solid rgba(255, 255, 255, .35);
+  border-radius: var(--r12);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 28px;
+  flex-shrink: 0;
+  z-index: 1;
+  position: relative;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, .12);
+}
+.phase-hero-text { flex: 1; z-index: 1; position: relative; min-width: 0; }
+.phase-hero-title {
+  font-family: var(--sans);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: -.3px;
+  color: #ffffff;
+  line-height: 1.2;
+}
+.phase-hero-tagline {
+  font-size: 12px;
+  color: rgba(255, 255, 255, .88);
+  margin-top: 4px;
+  letter-spacing: .03em;
+  font-weight: 500;
+}
+.phase-hero-deco {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  opacity: .55;
+  flex-shrink: 0;
+}
+.phase-hero-deco i { font-size: 18px; color: #ffffff; }
+.phase-hero-deco i:nth-child(1) { opacity: 1; }
+.phase-hero-deco i:nth-child(2) { opacity: .7; font-size: 22px; }
+.phase-hero-deco i:nth-child(3) { opacity: .9; font-size: 16px; }
+
+/* Phase-specific gradient backgrounds */
+.phase-hero.hero-req    { background: linear-gradient(135deg, #2563eb 0%, #4f46e5 100%); }
+.phase-hero.hero-design { background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 100%); }
+.phase-hero.hero-dev    { background: linear-gradient(135deg, #0891b2 0%, #2563eb 100%); }
+.phase-hero.hero-test   { background: linear-gradient(135deg, #059669 0%, #0891b2 100%); }
+.phase-hero.hero-pr     { background: linear-gradient(135deg, #6d28d9 0%, #2563eb 100%); }
+.phase-hero.hero-par    { background: linear-gradient(135deg, #ea580c 0%, #d97706 100%); }
+.phase-hero.hero-deploy { background: linear-gradient(135deg, #7c3aed 0%, #2563eb 100%); }
+.phase-hero.hero-review { background: linear-gradient(135deg, #d97706 0%, #dc2626 100%); }
+.phase-hero.hero-monitor{ background: linear-gradient(135deg, #059669 0%, #0891b2 100%); }
+
+@media (max-width: 640px) {
+  .phase-hero-deco { display: none; }
+  .phase-hero { padding: 1.125rem 1.25rem; }
+}
+
+/* ── Reject reason form (inline, replaces single Reject button) ── */
+.reject-form {
+  flex: 1 1 100%;
+  background: var(--bg2);
+  border: 1px solid rgba(220, 38, 38, .25);
+  border-radius: var(--r12);
+  padding: .875rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: .625rem;
+  animation: fadeUp .15s ease;
+}
+.reject-reason {
+  width: 100%;
+  border: 1px solid var(--border);
+  border-radius: var(--r8);
+  padding: .625rem .75rem;
+  font-family: var(--sans);
+  font-size: 12.5px;
+  color: var(--text1);
+  background: var(--bg1);
+  resize: vertical;
+  min-height: 60px;
+  outline: none;
+  transition: all .15s ease;
+  line-height: 1.5;
+}
+.reject-reason:focus {
+  border-color: var(--red);
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, .12);
+}
+.reject-reason::placeholder { color: var(--text3); }
+.reject-form-actions {
+  display: flex;
+  gap: .5rem;
+  flex-wrap: wrap;
+}
+
+/* ── Rejected-state banner (reason + verify checkbox) ─────── */
+.rejected-card {
+  background: var(--red2);
+  border: 1px solid rgba(220, 38, 38, .3);
+  border-radius: var(--r12);
+  padding: 1rem 1.125rem;
+  margin-bottom: 1rem;
+  animation: fadeUp .25s ease;
+}
+.rejected-head {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 700;
+  color: var(--red);
+  margin-bottom: .5rem;
+}
+.rejected-reason {
+  font-size: 12.5px;
+  color: var(--text1);
+  line-height: 1.55;
+  padding: .5rem .75rem;
+  background: var(--bg1);
+  border-left: 3px solid var(--red);
+  border-radius: 0 var(--r8) var(--r8) 0;
+  margin-bottom: .75rem;
+}
+.rejected-reason-label {
+  font-weight: 600;
+  color: var(--red);
+  margin-right: 4px;
+}
+.rejected-reason-empty { color: var(--text3); font-size: 12px; }
+
+.rejected-verify {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+  color: var(--text1);
+  cursor: pointer;
+  padding: .5rem .625rem;
+  border-radius: var(--r8);
+  border: 1px solid var(--border);
+  background: var(--bg1);
+  transition: all .15s ease;
+  user-select: none;
+}
+.rejected-verify:hover { border-color: var(--green); }
+.rejected-verify input[type="checkbox"] {
+  width: 18px; height: 18px;
+  accent-color: var(--green);
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.rejected-verify input[type="checkbox"]:checked + span strong {
+  color: var(--green);
+}
+
+/* ── Sign-off cards ──────────────────────────────────────── */
+.sign-box {
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--r12);
+  padding: .875rem 1rem;
+  margin-bottom: .625rem;
+  transition: all .2s ease;
+  box-shadow: var(--shadow-xs);
+}
+.sign-box.signed { border-color: rgba(5, 150, 105, .35); background: rgba(5, 150, 105, .03); }
+
+.sign-row {
+  display: flex; align-items: center; gap: 10px;
+  margin-bottom: 4px;
+}
+.sign-av {
+  width: 32px; height: 32px;
+  border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+  font-size: 11px; font-weight: 700;
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  background: var(--bg2);
+}
+.sign-name  { font-size: 13px; font-weight: 600; color: var(--text1); }
+.sign-role  { font-size: 11px; color: var(--text2); }
+.sign-status { font-size: 11px; font-weight: 600; }
+.sign-comment {
+  font-size: 11.5px;
+  color: var(--text2);
+  font-style: italic;
+  padding-left: 12px;
+  margin-left: 42px;
+  margin-top: 4px;
+  line-height: 1.55;
+  border-left: 3px solid var(--green);
+}

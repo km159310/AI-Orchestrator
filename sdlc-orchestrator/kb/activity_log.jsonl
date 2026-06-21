@@ -1,0 +1,373 @@
+{"id": "log::1781821787390::117000d2", "time": "09:00", "msg": "AI Orchestrator online \u2014 ABC Bank project loaded", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781821856130::57db0585", "time": "09:01", "msg": "AI parsing pasted description\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781821856480::90d255cc", "time": "09:02", "msg": "\u2713 2 requirements extracted \u00b7 1 port(s) \u00b7 1 risk(s)", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781821861954::554e4d77", "time": "09:03", "msg": "Project: Greenfield", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781821871713::a070062b", "time": "09:04", "msg": "Stack: Python", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781821871973::dbd6cf06", "time": "09:05", "msg": "Requirements: agents started", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781821885393::c2f799a3", "time": "09:06", "msg": "Requirements: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "req", "agent_id": null}
+{"id": "log::1781821989477::c4b0a826", "time": "09:07", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781821990156::bcbc26a7", "time": "09:08", "msg": "\u2713 Marcus Webb signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781821990889::47c5ed29", "time": "09:09", "msg": "\u2713 Priya Nair signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781821990940::56ddd016", "time": "09:10", "msg": "All signed \u2014 req ready to advance", "tag": "warn", "phase": "req", "agent_id": null}
+{"id": "log::1781821995060::71c15739", "time": "09:11", "msg": "\u2713 Requirements approved", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781821995136::8de48723", "time": "09:12", "msg": "\u2192 Auto-triggering Design\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781821996063::0bb250f1", "time": "09:13", "msg": "Design: agents started", "tag": "info", "phase": "design", "agent_id": null}
+{"id": "log::1781822009378::b6e8edd8", "time": "09:14", "msg": "Design: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "design", "agent_id": null}
+{"id": "log::1781822278997::98fb892e", "time": "09:15", "msg": "\u2713 Alex Torres signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1781822279732::334ad8c2", "time": "09:16", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1781822280755::8823303f", "time": "09:17", "msg": "\u2713 David Kim signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1781822280806::3f709ce1", "time": "09:18", "msg": "All signed \u2014 design ready to advance", "tag": "warn", "phase": "design", "agent_id": null}
+{"id": "log::1781822808016::0275eda3", "time": "09:19", "msg": "\u2713 Design approved", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1781822808089::373d851e", "time": "09:20", "msg": "\u2192 Auto-triggering Development\u2026", "tag": "info", "phase": "design", "agent_id": null}
+{"id": "log::1781823788750::4ff1819c", "time": "09:00", "msg": "AI Orchestrator online \u2014 ABC Bank project loaded", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781881319915::03e25fa1", "time": "09:01", "msg": "PR: branch Application/branch created", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781925784907::79dfcf92", "time": "09:00", "msg": "AI Orchestrator online \u2014 ABC Bank project loaded", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781925891837::12fd9a01", "time": "09:00", "msg": "AI Orchestrator online \u2014 ABC Bank project loaded", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781925925552::85a5828b", "time": "09:01", "msg": "PR: branch Application/branch created", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781925925625::b244e2a8", "time": "09:02", "msg": "Project: Existing + PR agent", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781925942072::cdd8afe3", "time": "09:03", "msg": "Injecting feature \"FICO score report\" into ABC Bank app\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781925942495::b09bf01c", "time": "09:04", "msg": "\u2713 Feature \"FICO score report\" added to ABC Bank app on branch feature/fico-score-report (1 total) \u2014 refresh ports 3001/3002 to view.", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781925946606::cfe03b59", "time": "09:05", "msg": "AI parsing pasted description\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781925946670::ea57655e", "time": "09:06", "msg": "\u2713 2 requirements extracted \u00b7 1 port(s) \u00b7 1 risk(s)", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781925946892::bf3a7bb0", "time": "09:07", "msg": "Requirements: agents started", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781925961292::ede12e6d", "time": "09:08", "msg": "Requirements: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "req", "agent_id": null}
+{"id": "log::1781925964054::4c6a6f30", "time": "09:09", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781925964679::5e4ee97c", "time": "09:10", "msg": "\u2713 Marcus Webb signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781925965518::5d3295b8", "time": "09:11", "msg": "\u2713 Priya Nair signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781925965588::b6ccd789", "time": "09:12", "msg": "All signed \u2014 req ready to advance", "tag": "warn", "phase": "req", "agent_id": null}
+{"id": "log::1781925966507::7f630a41", "time": "09:13", "msg": "\u2713 Requirements approved", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781925966562::5e78dc90", "time": "09:14", "msg": "\u2192 Auto-triggering Design\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781925967523::f6f85e4c", "time": "09:15", "msg": "Design: agents started", "tag": "info", "phase": "design", "agent_id": null}
+{"id": "log::1781925980667::cf91d01d", "time": "09:16", "msg": "Design: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "design", "agent_id": null}
+{"id": "log::1781925994233::3f1e0076", "time": "09:17", "msg": "\u2713 Alex Torres signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1781925995023::1b2ff704", "time": "09:18", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1781925995786::93975362", "time": "09:19", "msg": "\u2713 David Kim signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1781925995831::61de1214", "time": "09:20", "msg": "All signed \u2014 design ready to advance", "tag": "warn", "phase": "design", "agent_id": null}
+{"id": "log::1781925999218::71b335bf", "time": "09:22", "msg": "\u2192 Auto-triggering Development\u2026", "tag": "info", "phase": "design", "agent_id": null}
+{"id": "log::1781926003306::eef06905", "time": "09:23", "msg": "Env: Localhost (multi-port)", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1781926003571::01f1c7ef", "time": "09:24", "msg": "Development: agents started", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1781926016648::2d321705", "time": "09:25", "msg": "Development: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "dev", "agent_id": null}
+{"id": "log::1781926016712::5893f239", "time": "09:26", "msg": "Materialising ABC Bank application\u2026", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1781926017037::b43c042f", "time": "09:27", "msg": "\u2713 ABC Bank app generated \u2014 9 files", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1781926027504::8ebfa8de", "time": "09:28", "msg": "\u25b6 ABC Bank running on http://localhost:3001/", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1781926119299::f231ff5c", "time": "09:29", "msg": "\u2713 Marcus Webb signed off", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1781926120219::337110b9", "time": "09:30", "msg": "\u2713 Priya Nair signed off", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1781926121028::20671c95", "time": "09:31", "msg": "\u2713 Raj Patel signed off", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1781926121082::a0d17a2f", "time": "09:32", "msg": "All signed \u2014 dev ready to advance", "tag": "warn", "phase": "dev", "agent_id": null}
+{"id": "log::1781926123053::26650600", "time": "09:33", "msg": "\u2713 Development approved", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1781926123115::60467bee", "time": "09:34", "msg": "\u2192 Auto-triggering Testing\u2026", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1781926124071::ff29bafc", "time": "09:35", "msg": "Testing: agents started", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1781926137382::f431ebea", "time": "09:36", "msg": "Testing: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "test", "agent_id": null}
+{"id": "log::1781926142496::b93bb625", "time": "09:37", "msg": "\u2713 Priya Nair signed off", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1781926143115::21cb5907", "time": "09:38", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1781926143738::e43a39cc", "time": "09:39", "msg": "\u2713 Marcus Webb signed off", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1781926143804::9dbd9c9b", "time": "09:40", "msg": "Testing: all stakeholders signed \u2014 committing & raising PR automatically", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1781926143872::1b29ffb7", "time": "09:41", "msg": "All signed \u2014 test ready to advance", "tag": "warn", "phase": "test", "agent_id": null}
+{"id": "log::1781926144340::3c28a1b9", "time": "09:42", "msg": "GitHub: pushing ABC Bank scaffold\u2026", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1781926144909::aa0a3c44", "time": "09:43", "msg": "GitHub: Mock push \u2014 set GITHUB_TOKEN and GITHUB_REPO for a real commit.", "tag": "warn", "phase": "test", "agent_id": null}
+{"id": "log::1781926150352::3ca16e59", "time": "09:44", "msg": "GitHub: \u2713 Initialising git repository", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1781926156359::6cbd7eba", "time": "09:45", "msg": "GitHub: \u2713 Staging files", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1781926162362::eda83482", "time": "09:46", "msg": "GitHub: \u2713 Creating commit", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1781926168376::d1187716", "time": "09:47", "msg": "GitHub: \u2713 Pushing branch to GitHub", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1781926174389::68f70493", "time": "09:48", "msg": "GitHub: \u2713 Opening pull request", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1781926174487::373c5aba", "time": "09:49", "msg": "GitHub: \u2713 pushed to AI-Orchestrator/ABC-Bank-v1.0 \u00b7 PR #142 opened (mock)", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1781926175290::9c90cdb3", "time": "09:50", "msg": "\u2713 Testing approved", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1781926175335::938b2468", "time": "09:51", "msg": "\u2192 Auto-triggering PR (Pull Request)\u2026", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1781926175797::50fa5c3f", "time": "09:52", "msg": "PR: feature branch pipeline started", "tag": "info", "phase": "pr", "agent_id": null}
+{"id": "log::1781926183865::02807918", "time": "09:53", "msg": "PR feature \u2713 Check Out code", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1781926191935::99be0ad9", "time": "09:54", "msg": "PR feature \u2713 Build App", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1781926200021::97e8b01a", "time": "09:55", "msg": "PR feature \u2713 Docker Build", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1781926208097::1ca59857", "time": "09:56", "msg": "PR feature \u2713 Deploy (Dev) core infrastructure", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1781926216181::9e2e4ed8", "time": "09:57", "msg": "PR feature \u2713 Deploy App (dev-ecs-fargate-us-east-1)", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1781926224876::89e2ba7e", "time": "09:58", "msg": "PR feature \u2713 Deploy App (dev-ecs-fargate-us-west-2)", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1781926233886::ad191b9d", "time": "09:59", "msg": "PR feature \u2713 Deploy (QA) core infrastructure", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1781926241960::a894dbf1", "time": "10:00", "msg": "PR feature \u2713 Deploy App (qa-ecs-fargate-us-east-1)", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1781926250040::776330b3", "time": "10:01", "msg": "PR feature \u2713 Deploy App (qa-ecs-fargate-us-west-2)", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1781926258114::23f273c0", "time": "10:02", "msg": "PR feature \u2713 Component Tests", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1781926282470::3aa8a85f", "time": "10:03", "msg": "PR: peer review approved \u2014 merging feature \u2192 main", "tag": "success", "phase": "pr", "agent_id": null}
+{"id": "log::1781926282526::8f518939", "time": "10:04", "msg": "PR: merged to main \u2014 master branch pipeline started", "tag": "info", "phase": "pr", "agent_id": null}
+{"id": "log::1781926290558::a4945e1a", "time": "10:05", "msg": "PR master \u2713 Check Out code", "tag": "success", "phase": "pr", "agent_id": null}
+{"id": "log::1781926298629::8cd3e2cd", "time": "10:06", "msg": "PR master \u2713 Build App", "tag": "success", "phase": "pr", "agent_id": null}
+{"id": "log::1781926306711::2765b7db", "time": "10:07", "msg": "PR master \u2713 Docker Build", "tag": "success", "phase": "pr", "agent_id": null}
+{"id": "log::1781926314775::acd26e4e", "time": "10:08", "msg": "PR master \u2713 Deploy (Dev) core infrastructure", "tag": "success", "phase": "pr", "agent_id": null}
+{"id": "log::1781926322844::b1fe3d86", "time": "10:09", "msg": "PR master \u2713 Deploy App (dev-ecs-fargate-us-east-1)", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1781926330916::3ad94f81", "time": "10:10", "msg": "PR master \u2713 Deploy App (dev-ecs-fargate-us-west-2)", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1781926338995::59bb5e95", "time": "10:11", "msg": "PR master \u2713 Deploy (QA) core infrastructure", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1781926347069::500e5beb", "time": "10:12", "msg": "PR master \u2713 Deploy App (qa-ecs-fargate-us-east-1)", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1781926355146::946b7a40", "time": "10:13", "msg": "PR master \u2713 Deploy App (qa-ecs-fargate-us-west-2)", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1781926363224::2478b329", "time": "10:14", "msg": "PR master \u2713 Component Tests", "tag": "success", "phase": "pr", "agent_id": null}
+{"id": "log::1781926371306::ef3c192e", "time": "10:15", "msg": "PR master \u2713 Check production readiness", "tag": "success", "phase": "pr", "agent_id": null}
+{"id": "log::1781926371380::0eeffbb7", "time": "10:16", "msg": "PR: master pipeline complete \u2014 awaiting final approval", "tag": "warn", "phase": "pr", "agent_id": null}
+{"id": "log::1781926372730::548a09ab", "time": "10:17", "msg": "\u2713 PR (Pull Request) approved", "tag": "success", "phase": "pr", "agent_id": null}
+{"id": "log::1781926372670::49825eb9", "time": "10:18", "msg": "\u2192 Auto-triggering PAR Approval\u2026", "tag": "info", "phase": "pr", "agent_id": null}
+{"id": "log::1781926373690::45612d0b", "time": "10:19", "msg": "PAR Approval: agents started", "tag": "info", "phase": "par", "agent_id": null}
+{"id": "log::1781926384185::aeb169b2", "time": "10:20", "msg": "PAR Approval: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "par", "agent_id": null}
+{"id": "log::1781926448753::3fa56b21", "time": "10:21", "msg": "\u2713 Helen Zhou signed off", "tag": "success", "phase": "par", "agent_id": null}
+{"id": "log::1781926449877::39be73d2", "time": "10:22", "msg": "\u2713 Olivia Brown signed off", "tag": "success", "phase": "par", "agent_id": null}
+{"id": "log::1781926450537::3c27e83b", "time": "10:23", "msg": "\u2713 David Kim signed off", "tag": "success", "phase": "par", "agent_id": null}
+{"id": "log::1781926451237::d6c28fa0", "time": "10:24", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "par", "agent_id": null}
+{"id": "log::1781926451296::3dc8b6d1", "time": "10:25", "msg": "All signed \u2014 par ready to advance", "tag": "warn", "phase": "par", "agent_id": null}
+{"id": "log::1781926453003::a7f6fcad", "time": "10:26", "msg": "\u2713 PAR Approval approved", "tag": "success", "phase": "par", "agent_id": null}
+{"id": "log::1781926453047::381c1fba", "time": "10:27", "msg": "\u2192 Auto-triggering Deployment\u2026", "tag": "info", "phase": "par", "agent_id": null}
+{"id": "log::1781926453956::87d7dff5", "time": "10:28", "msg": "AWS preflight: all checks green", "tag": "success", "phase": "deploy", "agent_id": null}
+{"id": "log::1781926454021::f53f6627", "time": "10:29", "msg": "AWS Fargate deploy starting \u2014 terraform apply + docker build/push + ECS update", "tag": "info", "phase": "deploy", "agent_id": null}
+{"id": "log::1781926454178::422991a2", "time": "10:30", "msg": "Image tag for this run: v20260619-223414", "tag": "info", "phase": "deploy", "agent_id": null}
+{"id": "log::1781926480150::ea1cf084", "time": "10:31", "msg": "Deployment: all agents complete", "tag": "info", "phase": "deploy", "agent_id": null}
+{"id": "log::1781926480507::20848042", "time": "10:32", "msg": "AWS Fargate deploy succeeded \u00b7 http://abc-bank-1234.us-east-1.elb.amazonaws.com", "tag": "success", "phase": "deploy", "agent_id": null}
+{"id": "log::1781926480574::f7f3b0f5", "time": "10:33", "msg": "\u2192 Auto-triggering Release Review\u2026", "tag": "info", "phase": "deploy", "agent_id": null}
+{"id": "log::1781926481826::e2e8bfa3", "time": "10:34", "msg": "Release Review: agents started", "tag": "info", "phase": "review", "agent_id": null}
+{"id": "log::1781926495132::834582be", "time": "10:35", "msg": "Release Review: all agents complete \u2014 auto-advancing (no sign-off required)", "tag": "success", "phase": "review", "agent_id": null}
+{"id": "log::1781926495229::0426d208", "time": "10:36", "msg": "\u2192 Auto-triggering Dashboard & Observability\u2026", "tag": "info", "phase": "review", "agent_id": null}
+{"id": "log::1781926496136::e474d672", "time": "10:37", "msg": "Dashboard & Observability: agents started", "tag": "info", "phase": "monitor", "agent_id": null}
+{"id": "log::1781926502644::88208769", "time": "10:38", "msg": "Dashboard & Observability: all agents complete \u2014 auto-advancing (no sign-off required)", "tag": "success", "phase": "monitor", "agent_id": null}
+{"id": "log::1781926502700::04618327", "time": "10:39", "msg": "\ud83c\udf89 ABC Bank pipeline complete!", "tag": "success", "phase": "monitor", "agent_id": null}
+{"id": "log::1781926502741::f965f0ce", "time": "10:40", "msg": "Pipeline complete \u2014 reverting feature \"FICO score report\" from ABC Bank\u2026", "tag": "info", "phase": "monitor", "agent_id": null}
+{"id": "log::1781926502783::cdef81f7", "time": "10:41", "msg": "\u2713 Feature \"FICO score report\" reverted \u2014 base ABC Bank app restored (refresh :3001/:3002 to confirm)", "tag": "success", "phase": "monitor", "agent_id": null}
+{"id": "log::1781926526996::381dacf6", "time": "09:00", "msg": "Orchestrator reset \u2014 Requirements phase active", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781926528672::ef83562d", "time": "09:01", "msg": "PR: branch Application/branch created", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781926528747::3ab09373", "time": "09:02", "msg": "Project: Existing + PR agent", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781926542022::dc1b0deb", "time": "09:03", "msg": "Injecting feature \"Credit limit increase\" into ABC Bank app\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781926542110::873c3da6", "time": "09:04", "msg": "\u2713 Feature \"Credit limit increase\" added to ABC Bank app on branch feature/credit-limit-increase (1 total) \u2014 refresh ports 3001/3002 to view.", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781926546915::2c4ff07b", "time": "09:05", "msg": "AI parsing pasted description\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781926547233::d9139c26", "time": "09:06", "msg": "\u2713 2 requirements extracted \u00b7 1 port(s) \u00b7 1 risk(s)", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781926547490::16622c6e", "time": "09:07", "msg": "Requirements: agents started", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781926566879::94ba0166", "time": "09:08", "msg": "Requirements: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "req", "agent_id": null}
+{"id": "log::1781926587293::901ac041", "time": "09:09", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781926588086::96f330fd", "time": "09:10", "msg": "\u2713 Marcus Webb signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781926588845::3ca0a56d", "time": "09:11", "msg": "\u2713 Priya Nair signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781926588890::e54b4539", "time": "09:12", "msg": "All signed \u2014 req ready to advance", "tag": "warn", "phase": "req", "agent_id": null}
+{"id": "log::1781926590025::c2641606", "time": "09:13", "msg": "\u2713 Requirements approved", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781926590088::940bc2f4", "time": "09:14", "msg": "\u2192 Auto-triggering Design\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781926591042::1df45a64", "time": "09:15", "msg": "Design: agents started", "tag": "info", "phase": "design", "agent_id": null}
+{"id": "log::1781926605129::5a06d402", "time": "09:16", "msg": "Design: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "design", "agent_id": null}
+{"id": "log::1781926609622::cb78818a", "time": "09:17", "msg": "\u2713 Alex Torres signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1781926610297::f09177bb", "time": "09:18", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1781926611664::a16489a0", "time": "09:19", "msg": "\u2713 David Kim signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1781926611721::69a44c88", "time": "09:20", "msg": "All signed \u2014 design ready to advance", "tag": "warn", "phase": "design", "agent_id": null}
+{"id": "log::1781926612509::def36f2b", "time": "09:22", "msg": "\u2192 Auto-triggering Development\u2026", "tag": "info", "phase": "design", "agent_id": null}
+{"id": "log::1781926612540::413d9343", "time": "09:21", "msg": "\u2713 Design approved", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1781926616451::3a5c812f", "time": "09:23", "msg": "Env: Localhost (multi-port)", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1781926616713::0a7453fa", "time": "09:24", "msg": "Development: agents started", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1781926630574::052614a5", "time": "09:25", "msg": "Development: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "dev", "agent_id": null}
+{"id": "log::1781926630636::e29063fb", "time": "09:26", "msg": "Materialising ABC Bank application\u2026", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1781926630996::f4ea17a8", "time": "09:27", "msg": "\u2713 ABC Bank app generated \u2014 9 files", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1781926632686::7d00e4a5", "time": "09:28", "msg": "\u25b6 ABC Bank running on http://localhost:3001/", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1781963466373::d40f0e60", "time": "09:00", "msg": "AI Orchestrator online \u2014 ABC Bank project loaded", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781963499300::d84ef38c", "time": "09:01", "msg": "PR: branch Application/branch created", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781963499365::afdf06b7", "time": "09:02", "msg": "Project: Existing + PR agent", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781963718031::3c5f9778", "time": "09:00", "msg": "AI Orchestrator online \u2014 ABC Bank project loaded", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781976475242::561e3d12", "time": "09:03", "msg": "Injecting feature \"FICO score report\" into ABC Bank app\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781976475624::6f9c30d4", "time": "09:04", "msg": "\u2713 Feature \"FICO score report\" added to ABC Bank app on branch feature/fico-score-report (2 total) \u2014 refresh ports 3001/3002 to view.", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781982969182::0987dc2f", "time": "09:05", "msg": "AI parsing pasted description\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781982969503::a6f1164f", "time": "09:06", "msg": "\u2713 2 requirements extracted \u00b7 1 port(s) \u00b7 1 risk(s)", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781982969763::9bd5a3f9", "time": "09:07", "msg": "Requirements: agents started", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781982981303::4690aec3", "time": "09:00", "msg": "AI Orchestrator online \u2014 ABC Bank project loaded", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781982982279::b769d0bd", "time": "09:01", "msg": "PR: branch Application/branch created", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781982982307::26a0f911", "time": "09:02", "msg": "Project: Existing + PR agent", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781982991552::affe3d81", "time": "09:03", "msg": "AI parsing pasted description\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781982991589::b3134b41", "time": "09:04", "msg": "\u2713 2 requirements extracted \u00b7 1 port(s) \u00b7 1 risk(s)", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781983008120::713e434d", "time": "09:05", "msg": "Requirements: agents started", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781983021086::10bc9506", "time": "09:06", "msg": "Requirements: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "req", "agent_id": null}
+{"id": "log::1781983024558::83a722a1", "time": "09:07", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781983025544::66e8d9e2", "time": "09:08", "msg": "\u2713 Marcus Webb signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781983026366::63b9f211", "time": "09:09", "msg": "\u2713 Priya Nair signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781983026414::68b4bbfd", "time": "09:10", "msg": "All signed \u2014 req ready to advance", "tag": "warn", "phase": "req", "agent_id": null}
+{"id": "log::1781983027750::e2e239f3", "time": "09:12", "msg": "\u2192 Auto-triggering Design\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781983028756::6c552e05", "time": "09:13", "msg": "Design: agents started", "tag": "info", "phase": "design", "agent_id": null}
+{"id": "log::1781983041781::4f97cc9c", "time": "09:14", "msg": "Design: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "design", "agent_id": null}
+{"id": "log::1781983048361::3fcbea02", "time": "09:15", "msg": "\u2713 Alex Torres signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1781983049050::2c104985", "time": "09:16", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1781983050250::31aa8fca", "time": "09:17", "msg": "\u2713 David Kim signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1781983050284::9d2dba14", "time": "09:18", "msg": "All signed \u2014 design ready to advance", "tag": "warn", "phase": "design", "agent_id": null}
+{"id": "log::1781983064324::e5a5f789", "time": "09:20", "msg": "\u2192 Auto-triggering Development\u2026", "tag": "info", "phase": "design", "agent_id": null}
+{"id": "log::1781983064365::0aa6d0c6", "time": "09:19", "msg": "\u2713 Design approved", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1781983064486::c9cb35f1", "time": "09:22", "msg": "\u2192 Auto-triggering Development\u2026", "tag": "info", "phase": "design", "agent_id": null}
+{"id": "log::1781983075471::8975a6fc", "time": "09:23", "msg": "\u25a0 Stopped ABC Bank on :3001", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1781983226080::e3ebccb9", "time": "09:24", "msg": "\u25b6 ABC Bank running on http://localhost:3002/", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1781996237283::77bc03a5", "time": "09:01", "msg": "PR: branch Application/branch created", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781996237327::dc4ca0f5", "time": "09:02", "msg": "Project: Existing + PR agent", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781996252441::5c085935", "time": "09:03", "msg": "Injecting feature \"FICO score report\" into ABC Bank app\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781996252885::f92151a0", "time": "09:04", "msg": "Feature \"FICO score report\" already injected (2 total) \u2014 refresh ABC Bank app to view.", "tag": "warn", "phase": "req", "agent_id": null}
+{"id": "log::1781998649125::6c9c257e", "time": "09:05", "msg": "AI parsing pasted description\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781998649439::e0ac5f8b", "time": "09:06", "msg": "\u2713 2 requirements extracted \u00b7 1 port(s) \u00b7 1 risk(s)", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781998649702::7d7e67fe", "time": "09:07", "msg": "Requirements: agents started", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781998662940::7db8d640", "time": "09:08", "msg": "Requirements: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "req", "agent_id": null}
+{"id": "log::1781998670835::c27750fa", "time": "09:09", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781998672102::8efa2fb0", "time": "09:10", "msg": "\u2713 Marcus Webb signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781998673471::4e2bb8b6", "time": "09:11", "msg": "\u2713 Priya Nair signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1781998673566::6cc35367", "time": "09:12", "msg": "All signed \u2014 req ready to advance", "tag": "warn", "phase": "req", "agent_id": null}
+{"id": "log::1781998675217::35b5817c", "time": "09:14", "msg": "\u2192 Auto-triggering Design\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1781998676231::99449c4d", "time": "09:15", "msg": "Design: agents started", "tag": "info", "phase": "design", "agent_id": null}
+{"id": "log::1781998689160::1c735ce6", "time": "09:16", "msg": "Design: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "design", "agent_id": null}
+{"id": "log::1781998697162::d318cb91", "time": "09:17", "msg": "\u2713 Alex Torres signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1781998698326::dfab8428", "time": "09:18", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1781998700222::5fa5b9aa", "time": "09:19", "msg": "\u2713 David Kim signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1781998700264::45d162e6", "time": "09:20", "msg": "All signed \u2014 design ready to advance", "tag": "warn", "phase": "design", "agent_id": null}
+{"id": "log::1781998701814::721ee4ef", "time": "09:22", "msg": "\u2192 Auto-triggering Development\u2026", "tag": "info", "phase": "design", "agent_id": null}
+{"id": "log::1781998701882::96944add", "time": "09:21", "msg": "\u2713 Design approved", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1781998705949::4020d2c1", "time": "09:23", "msg": "Env: Localhost (multi-port)", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1781998706216::b0fc4d83", "time": "09:24", "msg": "Development: agents started", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1781998719851::951a6a28", "time": "09:25", "msg": "Development: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "dev", "agent_id": null}
+{"id": "log::1781998719917::b72a9d5b", "time": "09:26", "msg": "Materialising ABC Bank application\u2026", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1781998720316::5200a629", "time": "09:27", "msg": "\u2713 ABC Bank app generated \u2014 9 files", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1781998727430::03c529aa", "time": "09:28", "msg": "\u25b6 ABC Bank running on http://localhost:3001/", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1781998773875::d937c102", "time": "09:29", "msg": "\u2713 Marcus Webb signed off", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1781998774981::f9f7be3f", "time": "09:30", "msg": "\u2713 Priya Nair signed off", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1781998775980::4a6d23d6", "time": "09:31", "msg": "\u2713 Raj Patel signed off", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1781998776067::7f3f2143", "time": "09:32", "msg": "All signed \u2014 dev ready to advance", "tag": "warn", "phase": "dev", "agent_id": null}
+{"id": "log::1782000589352::9f918f69", "time": "09:00", "msg": "AI Orchestrator online \u2014 ABC Bank project loaded", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1782000596690::1c4f838f", "time": "09:02", "msg": "Project: Existing + PR agent", "tag": "info", "phase": "req", "agent_id": null}
+: null}
+{"id": "log::1782000616574::26cca1a7", "time": "09:03", "msg": "Injecting feature \"Rewards & cashback\" into ABC Bank app\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1782000616716::78845fd5", "time": "09:04", "msg": "\u2713 Feature \"Rewards & cashback\" added to ABC Bank app on branch feature/rewards-cashback (3 total) \u2014 refresh ports 3001/3002 to view.", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1782000618698::fd7ba352", "time": "09:05", "msg": "AI parsing pasted description\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1782000619011::cc71a81e", "time": "09:06", "msg": "\u2713 2 requirements extracted \u00b7 1 port(s) \u00b7 1 risk(s)", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1782000619277::0e5978d7", "time": "09:07", "msg": "Requirements: agents started", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1782000632607::db5e10d9", "time": "09:08", "msg": "Requirements: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "req", "agent_id": null}
+{"id": "log::1782000738089::5a0934f4", "time": "09:09", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1782000738893::b765df5b", "time": "09:10", "msg": "\u2713 Marcus Webb signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1782000740153::018ef8e7", "time": "09:11", "msg": "\u2713 Priya Nair signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1782000740219::de6e981c", "time": "09:12", "msg": "All signed \u2014 req ready to advance", "tag": "warn", "phase": "req", "agent_id": null}
+{"id": "log::1782000741377::4d882324", "time": "09:14", "msg": "\u2192 Auto-triggering Design\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1782000741417::8040192d", "time": "09:13", "msg": "\u2713 Requirements approved", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1782000742402::bb85c80c", "time": "09:15", "msg": "Design: agents started", "tag": "info", "phase": "design", "agent_id": null}
+{"id": "log::1782000755366::60707712", "time": "09:16", "msg": "Design: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "design", "agent_id": null}
+{"id": "log::1782000758594::aad5682a", "time": "09:17", "msg": "\u2713 Alex Torres signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1782000759243::b53dcdfb", "time": "09:18", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1782000759889::8eb8fd86", "time": "09:19", "msg": "\u2713 David Kim signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1782000759949::86d4d4b7", "time": "09:20", "msg": "All signed \u2014 design ready to advance", "tag": "warn", "phase": "design", "agent_id": null}
+{"id": "log::1782000760680::0c3d35b6", "time": "09:22", "msg": "\u2192 Auto-triggering Development\u2026", "tag": "info", "phase": "design", "agent_id": null}
+{"id": "log::1782000760619::6b5b07e2", "time": "09:21", "msg": "\u2713 Design approved", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1782000767327::2d8fa32a", "time": "09:23", "msg": "Env: Localhost (multi-port)", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1782000767584::56c757fa", "time": "09:24", "msg": "Development: agents started", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1782000781047::43d58945", "time": "09:25", "msg": "Development: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "dev", "agent_id": null}
+{"id": "log::1782000784357::c5c19583", "time": "09:26", "msg": "\u2713 Marcus Webb signed off", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1782000785009::96ec1549", "time": "09:27", "msg": "\u2713 Priya Nair signed off", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1782000785757::e53cacac", "time": "09:28", "msg": "\u2713 Raj Patel signed off", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1782000785816::276dd131", "time": "09:29", "msg": "All signed \u2014 dev ready to advance", "tag": "warn", "phase": "dev", "agent_id": null}
+{"id": "log::1782000786609::f92b498f", "time": "09:30", "msg": "\u2713 Development approved", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1782000786661::80195956", "time": "09:31", "msg": "\u2192 Auto-triggering Testing\u2026", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1782000787626::e9b70006", "time": "09:32", "msg": "Testing: agents started", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782000801161::9683eda7", "time": "09:33", "msg": "Testing: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "test", "agent_id": null}
+{"id": "log::1782000804322::b2e32ba5", "time": "09:34", "msg": "\u2713 Priya Nair signed off", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1782000804988::75fac0cd", "time": "09:35", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1782000805802::e9d4f0d9", "time": "09:36", "msg": "\u2713 Marcus Webb signed off", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1782000805867::d4e9607a", "time": "09:37", "msg": "Testing: all stakeholders signed \u2014 committing & raising PR automatically", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782000805929::c58292e6", "time": "09:38", "msg": "All signed \u2014 test ready to advance", "tag": "warn", "phase": "test", "agent_id": null}
+{"id": "log::1782000806405::5f842c4c", "time": "09:39", "msg": "GitHub: pushing ABC Bank scaffold\u2026", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782000806948::3cc403ef", "time": "09:40", "msg": "GitHub: Mock push \u2014 set GITHUB_TOKEN and GITHUB_REPO for a real commit.", "tag": "warn", "phase": "test", "agent_id": null}
+{"id": "log::1782000812416::3d5fbe0f", "time": "09:41", "msg": "GitHub: \u2713 Initialising git repository", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782000818431::5fe83e3c", "time": "09:42", "msg": "GitHub: \u2713 Staging files", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782000824441::b0c4e647", "time": "09:43", "msg": "GitHub: \u2713 Creating commit", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782000830795::79418889", "time": "09:44", "msg": "GitHub: \u2713 Pushing branch to GitHub", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782000837797::bc73acdc", "time": "09:45", "msg": "GitHub: \u2713 Opening pull request", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782000837838::cec6e2d6", "time": "09:46", "msg": "GitHub: \u2713 pushed to AI-Orchestrator/ABC-Bank-v1.0 \u00b7 PR #142 opened (mock)", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1782000838788::9e224391", "time": "09:47", "msg": "\u2713 Testing approved", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1782000838828::045dd2fd", "time": "09:48", "msg": "\u2192 Auto-triggering PR (Pull Request)\u2026", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782000839786::4b16e342", "time": "09:49", "msg": "PR: feature branch pipeline started", "tag": "info", "phase": "pr", "agent_id": null}
+{"id": "log::1782000849794::d83bcf42", "time": "09:50", "msg": "PR feature \u2713 Check Out code", "tag": "success", "phase": "pr", "agent_id": null}
+{"id": "log::1782000858797::06d92ece", "time": "09:51", "msg": "PR feature \u2713 Build App", "tag": "success", "phase": "pr", "agent_id": null}
+{"id": "log::1782000868843::6ee4b703", "time": "09:52", "msg": "PR feature \u2713 Docker Build", "tag": "success", "phase": "pr", "agent_id": null}
+{"id": "log::1782000878788::4deae6d7", "time": "09:53", "msg": "PR feature \u2713 Deploy (Dev) core infrastructure", "tag": "success", "phase": "pr", "agent_id": null}
+{"id": "log::1782000888794::6548e6b8", "time": "09:54", "msg": "PR feature \u2713 Deploy App (dev-ecs-fargate-us-east-1)", "tag": "success", "phase": "pr", "agent_id": null}
+{"id": "log::1782000898789::5a2e0339", "time": "09:55", "msg": "PR feature \u2713 Deploy App (dev-ecs-fargate-us-west-2)", "tag": "success", "phase": "pr", "agent_id": null}
+{"id": "log::1782000908794::e82b3cce", "time": "09:56", "msg": "PR feature \u2713 Deploy (QA) core infrastructure", "tag": "success", "phase": "pr", "agent_id": null}
+{"id": "log::1782000961791::07aaca92", "time": "09:57", "msg": "PR feature \u2713 Deploy App (qa-ecs-fargate-us-east-1)", "tag": "success", "phase": "pr", "agent_id": null}
+{"id": "log::1782001081808::e4994ab9", "time": "09:58", "msg": "PR feature \u2713 Deploy App (qa-ecs-fargate-us-west-2)", "tag": "success", "phase": "pr", "agent_id": null}
+{"id": "log::1782001201792::a8b22367", "time": "09:59", "msg": "PR feature \u2713 Component Tests", "tag": "success", "phase": "pr", "agent_id": null}
+{"id": "log::1782001739474::e90e6307", "time": "09:00", "msg": "AI Orchestrator online \u2014 ABC Bank project loaded", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1782001743177::00d1655e", "time": "09:02", "msg": "Project: Existing + PR agent", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1782001743232::16fa4c75", "time": "09:01", "msg": "PR: branch Application/branch created", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1782001748581::9b05f6d6", "time": "09:03", "msg": "AI parsing pasted description\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1782001748643::85480248", "time": "09:04", "msg": "\u2713 2 requirements extracted \u00b7 1 port(s) \u00b7 1 risk(s)", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1782001752487::1503e3f7", "time": "09:05", "msg": "Requirements: agents started", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1782001766287::65f6060e", "time": "09:06", "msg": "Requirements: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "req", "agent_id": null}
+{"id": "log::1782001775835::156029df", "time": "09:07", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1782001776487::e79fb1c7", "time": "09:08", "msg": "\u2713 Marcus Webb signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1782001777118::e83f2634", "time": "09:09", "msg": "\u2713 Priya Nair signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1782001777186::fc1f5c4c", "time": "09:10", "msg": "All signed \u2014 req ready to advance", "tag": "warn", "phase": "req", "agent_id": null}
+{"id": "log::1782001778364::bab6b9bd", "time": "09:12", "msg": "\u2192 Auto-triggering Design\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1782001778412::88d69181", "time": "09:11", "msg": "\u2713 Requirements approved", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1782001779378::b481ad33", "time": "09:13", "msg": "Design: agents started", "tag": "info", "phase": "design", "agent_id": null}
+{"id": "log::1782001792262::125b8210", "time": "09:14", "msg": "Design: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "design", "agent_id": null}
+{"id": "log::1782001833478::330cace6", "time": "09:15", "msg": "\u2713 Alex Torres signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1782001834025::cddd797f", "time": "09:16", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1782001834601::2d1413c4", "time": "09:17", "msg": "\u2713 David Kim signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1782001834656::a8922dc1", "time": "09:18", "msg": "All signed \u2014 design ready to advance", "tag": "warn", "phase": "design", "agent_id": null}
+{"id": "log::1782001835775::bad5a5a4", "time": "09:19", "msg": "\u2713 Design approved", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1782001835837::4602cfb3", "time": "09:20", "msg": "\u2192 Auto-triggering Development\u2026", "tag": "info", "phase": "design", "agent_id": null}
+{"id": "log::1782001838303::9952e1c4", "time": "09:21", "msg": "Env: Localhost (multi-port)", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1782001838562::9dadd315", "time": "09:22", "msg": "Development: agents started", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1782001851499::df2a4826", "time": "09:23", "msg": "Development: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "dev", "agent_id": null}
+{"id": "log::1782001851551::e4a085a1", "time": "09:24", "msg": "Materialising ABC Bank application\u2026", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1782001851942::d0979cf4", "time": "09:25", "msg": "\u2713 ABC Bank app generated \u2014 9 files", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1782001855322::5369201d", "time": "09:26", "msg": "\u2713 Marcus Webb signed off", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1782001856103::a1926166", "time": "09:27", "msg": "\u2713 Priya Nair signed off", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1782001856839::e909c8ac", "time": "09:28", "msg": "\u2713 Raj Patel signed off", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1782001856894::81df883e", "time": "09:29", "msg": "All signed \u2014 dev ready to advance", "tag": "warn", "phase": "dev", "agent_id": null}
+{"id": "log::1782001857890::e64869e3", "time": "09:30", "msg": "\u2713 Development approved", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1782001857949::67fa2361", "time": "09:31", "msg": "\u2192 Auto-triggering Testing\u2026", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1782001858920::ec4fc999", "time": "09:32", "msg": "Testing: agents started", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782001871861::48046deb", "time": "09:33", "msg": "Testing: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "test", "agent_id": null}
+{"id": "log::1782001874798::2efd4dbb", "time": "09:34", "msg": "\u2713 Priya Nair signed off", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1782001875598::55b77638", "time": "09:35", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1782001876151::892ca22d", "time": "09:36", "msg": "\u2713 Marcus Webb signed off", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1782001876220::3e11fe77", "time": "09:37", "msg": "Testing: all stakeholders signed \u2014 committing & raising PR automatically", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782001876295::847aecf3", "time": "09:38", "msg": "All signed \u2014 test ready to advance", "tag": "warn", "phase": "test", "agent_id": null}
+{"id": "log::1782001876754::be9751f8", "time": "09:39", "msg": "GitHub: pushing ABC Bank scaffold\u2026", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782001882768::95de8f9d", "time": "09:40", "msg": "GitHub: \u2713 Initialising git repository", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782001888780::788fe7b9", "time": "09:41", "msg": "GitHub: \u2713 Staging files", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782001894791::19785bcf", "time": "09:42", "msg": "GitHub: \u2713 Creating commit", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782001900803::cdf8cb68", "time": "09:43", "msg": "GitHub: \u2713 Pushing branch to GitHub", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782001906815::de70660f", "time": "09:44", "msg": "GitHub: \u2713 Opening pull request", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782001906879::1d80bc40", "time": "09:45", "msg": "GitHub: \u2717 push failed \u2014 github repo lookup failed (404): Not Found", "tag": "danger", "phase": "test", "agent_id": null}
+{"id": "log::1782002318945::667f1a1f", "time": "09:00", "msg": "Orchestrator reset \u2014 Requirements phase active", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1782002321331::20a7e21c", "time": "09:01", "msg": "Project: Greenfield", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1782002324513::015cd9ab", "time": "09:00", "msg": "Orchestrator reset \u2014 Requirements phase active", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1782002325902::1454c018", "time": "09:01", "msg": "PR: branch Application/branch created", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1782002325942::8ac2b85d", "time": "09:02", "msg": "Project: Existing + PR agent", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1782002334113::24f80381", "time": "09:03", "msg": "Injecting feature \"FICO score report\" into ABC Bank app\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1782002334535::056d8c67", "time": "09:04", "msg": "\u2713 Feature \"FICO score report\" added to ABC Bank app on branch feature/fico-score-report (1 total) \u2014 refresh ports 3001/3002 to view.", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1782002335928::fdeca65b", "time": "09:05", "msg": "AI parsing pasted description\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1782002335971::5747f528", "time": "09:06", "msg": "\u2713 2 requirements extracted \u00b7 1 port(s) \u00b7 1 risk(s)", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1782002336203::839cb135", "time": "09:07", "msg": "Requirements: agents started", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1782002348976::8319f7de", "time": "09:08", "msg": "Requirements: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "req", "agent_id": null}
+{"id": "log::1782002429948::c6ed5c98", "time": "09:09", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1782002430620::56c6a0a1", "time": "09:10", "msg": "\u2713 Marcus Webb signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1782002431372::9f7f2eb2", "time": "09:11", "msg": "\u2713 Priya Nair signed off", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1782002431420::304447e4", "time": "09:12", "msg": "All signed \u2014 req ready to advance", "tag": "warn", "phase": "req", "agent_id": null}
+{"id": "log::1782002432119::10695d1e", "time": "09:14", "msg": "\u2192 Auto-triggering Design\u2026", "tag": "info", "phase": "req", "agent_id": null}
+{"id": "log::1782002432170::94ef1ec9", "time": "09:13", "msg": "\u2713 Requirements approved", "tag": "success", "phase": "req", "agent_id": null}
+{"id": "log::1782002433127::5e5d9031", "time": "09:15", "msg": "Design: agents started", "tag": "info", "phase": "design", "agent_id": null}
+{"id": "log::1782002446406::f2a7a836", "time": "09:16", "msg": "Design: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "design", "agent_id": null}
+{"id": "log::1782002448995::8d68bf7a", "time": "09:17", "msg": "\u2713 Alex Torres signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1782002449596::feceff4e", "time": "09:18", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1782002450281::d0fc4675", "time": "09:19", "msg": "\u2713 David Kim signed off", "tag": "success", "phase": "design", "agent_id": null}
+{"id": "log::1782002450335::fd9077d7", "time": "09:20", "msg": "All signed \u2014 design ready to advance", "tag": "warn", "phase": "design", "agent_id": null}
+{"id": "log::1782002451065::eac876cf", "time": "09:21", "msg": "\u2713 Design approved", "tag": "success", "phase": "design", "agent_id": null}
+nt_id": null}
+{"id": "log::1782002459343::84d95403", "time": "09:23", "msg": "Env: Localhost (multi-port)", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1782002459600::0f54da3e", "time": "09:24", "msg": "Development: agents started", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1782002472492::c5ff8c1e", "time": "09:25", "msg": "Development: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "dev", "agent_id": null}
+{"id": "log::1782002472562::b441f961", "time": "09:26", "msg": "Materialising ABC Bank application\u2026", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1782002472961::e23ec389", "time": "09:27", "msg": "\u2713 ABC Bank app generated \u2014 9 files", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1782002475390::e2b7f6bd", "time": "09:28", "msg": "\u2713 Marcus Webb signed off", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1782002475973::68de59d9", "time": "09:29", "msg": "\u2713 Priya Nair signed off", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1782002476649::a0587bd2", "time": "09:30", "msg": "\u2713 Raj Patel signed off", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1782002476707::d16ea185", "time": "09:31", "msg": "All signed \u2014 dev ready to advance", "tag": "warn", "phase": "dev", "agent_id": null}
+{"id": "log::1782002477914::fd1bed84", "time": "09:33", "msg": "\u2192 Auto-triggering Testing\u2026", "tag": "info", "phase": "dev", "agent_id": null}
+{"id": "log::1782002477973::057f6828", "time": "09:32", "msg": "\u2713 Development approved", "tag": "success", "phase": "dev", "agent_id": null}
+{"id": "log::1782002478922::3eea8847", "time": "09:34", "msg": "Testing: agents started", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782002492254::f3f3c183", "time": "09:35", "msg": "Testing: all agents complete \u2014 awaiting approval", "tag": "warn", "phase": "test", "agent_id": null}
+{"id": "log::1782002494042::09e50d84", "time": "09:36", "msg": "\u2713 Priya Nair signed off", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1782002494765::10da7090", "time": "09:37", "msg": "\u2713 Sarah Chen signed off", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1782002495417::2e92c211", "time": "09:38", "msg": "\u2713 Marcus Webb signed off", "tag": "success", "phase": "test", "agent_id": null}
+{"id": "log::1782002495472::d9673dcd", "time": "09:39", "msg": "Testing: all stakeholders signed \u2014 committing & raising PR automatically", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782002495537::9df9e6cc", "time": "09:40", "msg": "All signed \u2014 test ready to advance", "tag": "warn", "phase": "test", "agent_id": null}
+{"id": "log::1782002496026::151807c5", "time": "09:41", "msg": "GitHub: pushing ABC Bank scaffold\u2026", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782002502034::b29708d1", "time": "09:42", "msg": "GitHub: \u2713 Initialising git repository", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782002508044::a114680a", "time": "09:43", "msg": "GitHub: \u2713 Staging files", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782002514056::fd0ab77b", "time": "09:44", "msg": "GitHub: \u2713 Creating commit", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782002520068::e445b847", "time": "09:45", "msg": "GitHub: \u2713 Pushing branch to GitHub", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782002526080::632226d6", "time": "09:46", "msg": "GitHub: \u2713 Opening pull request", "tag": "info", "phase": "test", "agent_id": null}
+{"id": "log::1782002526145::feb2aadd", "time": "09:47", "msg": "GitHub: \u2717 push failed \u2014 github base ref lookup failed (409): Git Repository is empty.", "tag": "danger", "phase": "test", "agent_id": null}

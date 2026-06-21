@@ -1,0 +1,154 @@
+/* ── Pipeline Strip ──────────────────────────────────────── */
+.pipeline-wrap {
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--r16);
+  padding: 1.25rem 1.5rem 1rem;
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.pipeline-wrap::before {
+  content: 'PIPELINE';
+  position: absolute;
+  top: 10px; right: 16px;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: .12em;
+  color: var(--text3);
+}
+
+.pipeline {
+  display: flex;
+  align-items: center;
+  gap: 0;
+  overflow-x: auto;
+  padding-bottom: 2px;
+}
+
+/* ── Grouped phases (e.g. PR + PAR approval gates) ───────── */
+.ph-group {
+  display: flex;
+  align-items: center;
+  flex: 2.5;                  /* scales roughly with number of grouped phases */
+  min-width: 0;
+  margin: 18px 6px 6px;       /* top room for the floating label */
+  padding: 14px 10px 8px;
+  border: 1.5px dashed rgba(217, 119, 6, .55);
+  border-radius: 14px;
+  background: rgba(217, 119, 6, .04);
+  position: relative;
+}
+.ph-group > .ph-node { flex: 1; min-width: 64px; }
+.ph-group > .ph-conn { flex: .4; }
+.ph-group-lbl {
+  position: absolute;
+  top: -9px;
+  left: 14px;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--amber);
+  background: var(--bg1);
+  padding: 1px 7px;
+  border-radius: 6px;
+  border: 1px solid rgba(217, 119, 6, .35);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.ph-node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  flex: 1;
+  min-width: 78px;
+  position: relative;
+}
+
+.ph-circle {
+  width: 44px; height: 44px;
+  border-radius: 50%;
+  border: 1.5px solid var(--border2);
+  background: var(--bg1);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 16px;
+  transition: all .25s ease;
+  position: relative;
+  z-index: 1;
+  box-shadow: var(--shadow-xs);
+}
+.ph-circle.st-active {
+  border-color: var(--cyan);
+  background: var(--cyan4);
+  box-shadow: 0 0 0 4px rgba(37,99,235,.10), var(--shadow-cyan);
+  animation: nodeGlow 2.5s infinite;
+}
+.ph-circle.st-running {
+  border-color: var(--amber);
+  background: var(--amber2);
+  box-shadow: 0 0 0 4px rgba(217,119,6,.10);
+  animation: runPulse 1s infinite;
+}
+.ph-circle.st-pending { border-color: var(--amber); background: var(--amber2); }
+.ph-circle.st-done    { border-color: var(--green);  background: var(--green); box-shadow: var(--shadow-green); }
+.ph-circle.st-rejected{ border-color: var(--red);    background: var(--red2); }
+.ph-circle.st-locked  { opacity: .5; background: var(--bg2); }
+
+.ph-circle i { color: var(--text3); transition: color .25s ease; }
+.ph-circle.st-active   i { color: var(--cyan); }
+.ph-circle.st-done     i { color: #ffffff; }
+.ph-circle.st-rejected i { color: var(--red); }
+.ph-circle.st-running  i,
+.ph-circle.st-pending  i { color: var(--amber); }
+
+.ph-dot {
+  position: absolute;
+  top: -2px; right: -2px;
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  border: 2px solid var(--bg1);
+}
+.ph-dot.st-active   { background: var(--cyan);   box-shadow: 0 0 0 2px rgba(37,99,235,.2); }
+.ph-dot.st-running  { background: var(--amber);  animation: blink .8s infinite; }
+.ph-dot.st-pending  { background: var(--amber); }
+.ph-dot.st-done     { background: var(--green); }
+.ph-dot.st-rejected { background: var(--red); }
+
+.ph-lbl {
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--text2);
+  text-align: center;
+  max-width: 76px;
+  line-height: 1.3;
+  letter-spacing: 0;
+}
+.ph-lbl.st-active   { color: var(--cyan); font-weight: 600; }
+.ph-lbl.st-done     { color: var(--green); font-weight: 600; }
+.ph-lbl.st-rejected { color: var(--red); }
+.ph-lbl.st-running,
+.ph-lbl.st-pending  { color: var(--amber); font-weight: 600; }
+
+.ph-conn {
+  flex: 1;
+  height: 2px;
+  max-width: 28px; min-width: 8px;
+  position: relative;
+}
+.ph-conn::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--border);
+}
+.ph-conn.done::before {
+  background: linear-gradient(90deg, var(--green), var(--cyan));
+  opacity: .8;
+}
+.ph-conn.active::before { background: var(--cyan); opacity: .35; }

@@ -1,0 +1,45 @@
+/* ── Activity Log ────────────────────────────────────────── */
+.log-panel {
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--r16);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.log-head {
+  padding: .75rem 1.125rem;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+  display: flex; align-items: center; gap: 8px;
+}
+.log-head-title {
+  font-size: 11px; font-weight: 600; letter-spacing: .04em;
+  color: var(--text2); flex: 1;
+  display: flex; align-items: center; gap: 6px;
+}
+.log-count { font-size: 11px; color: var(--text3); font-family: var(--code); }
+
+.log-box {
+  padding: .75rem 1.125rem;
+  display: flex; flex-direction: column; gap: 4px;
+  max-height: 120px;
+  overflow-y: auto;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border2) transparent;
+}
+
+.log-row { display: flex; gap: 10px; font-size: 11.5px; animation: fadeUp .15s ease; align-items: center; }
+.log-t   { color: var(--text3); white-space: nowrap; min-width: 42px; font-family: var(--code); font-size: 10.5px; }
+.log-m   { flex: 1; color: var(--text2); line-height: 1.5; }
+
+.ltag {
+  font-size: 9.5px; font-weight: 700;
+  padding: 2px 7px; border-radius: 999px;
+  letter-spacing: .04em; text-transform: uppercase;
+  border: 1px solid;
+}
+.lt-info    { background: var(--cyan4);  color: var(--cyan);   border-color: rgba(37,99,235,.25); }
+.lt-success { background: var(--green2); color: var(--green);  border-color: rgba(5,150,105,.28); }
+.lt-warn    { background: var(--amber2); color: var(--amber);  border-color: rgba(217,119,6,.28); }
+.lt-danger  { background: var(--red2);   color: var(--red);    border-color: rgba(220,38,38,.28); }

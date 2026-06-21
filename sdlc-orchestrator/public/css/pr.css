@@ -1,0 +1,328 @@
+@keyframes live-pulse {
+  0%   { box-shadow: 0 0 0 0 rgba(5,150,105,.45); }
+  70%  { box-shadow: 0 0 0 6px rgba(5,150,105,0); }
+  100% { box-shadow: 0 0 0 0 rgba(5,150,105,0); }
+}
+
+/* ── PR (Pull Request) phase pipeline rows ───────────────── */
+.pr-pipeline {
+  display: flex; flex-direction: column;
+  gap: 6px;
+  margin: 6px 0 2px;
+}
+.pr-stage-row {
+  display: flex; align-items: center; gap: 10px;
+  padding: 8px 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--r8);
+  background: var(--bg1);
+  font-size: 11.5px;
+}
+.pr-stage-row.running { background: var(--amber2); border-color: rgba(217,119,6,.3); }
+.pr-stage-row.done    { background: var(--green2); border-color: rgba(5,150,105,.3); }
+.pr-stage-idx { font-family: var(--code); font-size: 10px; color: var(--text3); width: 22px; }
+.pr-stage-name { flex: 1; color: var(--text1); }
+.pr-stage-dot {
+  width: 10px; height: 10px; border-radius: 999px;
+  background: var(--text3); flex-shrink: 0;
+}
+.pr-stage-dot.running { background: var(--amber); box-shadow: 0 0 0 0 rgba(217,119,6,.35); animation: live-pulse 1.6s ease-out infinite; }
+.pr-stage-dot.done    { background: var(--green); }
+.pr-stage-state {
+  font-size: 10px; font-weight: 600; letter-spacing: .04em;
+  padding: 2px 8px; border-radius: 999px;
+  background: var(--bg2); color: var(--text3); border: 1px solid var(--border);
+}
+.pr-stage-state.running { background: var(--amber2); color: var(--amber); border-color: rgba(217,119,6,.3); }
+.pr-stage-state.done    { background: var(--green2); color: var(--green); border-color: rgba(5,150,105,.3); }
+
+/* ── GitHub push card (Testing phase auto-push to GitHub) ── */
+.gh-push-card {
+  margin-top: 12px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--r8);
+  background: var(--bg1);
+  box-shadow: var(--shadow-xs);
+}
+.gh-push-head {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 700; color: var(--text1);
+  margin-bottom: 10px;
+}
+.gh-push-head i { font-size: 16px; color: var(--text1); }
+.gh-push-link { color: var(--cyan); text-decoration: none; font-family: var(--code); font-size: 11px; font-weight: 600; }
+.gh-push-link:hover { text-decoration: underline; }
+.gh-push-pill {
+  margin-left: auto;
+  font-size: 9px; font-weight: 700; letter-spacing: .06em;
+  padding: 2px 8px; border-radius: 999px;
+  background: var(--green2); color: var(--green); border: 1px solid rgba(5,150,105,.3);
+}
+.gh-push-stages {
+  display: flex; flex-direction: column;
+  gap: 4px;
+  margin: 4px 0 10px;
+}
+.gh-push-stage {
+  display: flex; align-items: center; gap: 10px;
+  padding: 6px 8px;
+  border-radius: var(--r8);
+  font-size: 11px;
+  border: 1px solid transparent;
+}
+.gh-push-stage.running { background: var(--amber2); border-color: rgba(217,119,6,.25); }
+.gh-push-stage.done    { background: var(--green2); border-color: rgba(5,150,105,.25); color: var(--text1); }
+.gh-push-stage.idle    { color: var(--text3); }
+.gh-push-dot {
+  width: 8px; height: 8px; border-radius: 999px; background: var(--text3); flex-shrink: 0;
+}
+.gh-push-dot.running { background: var(--amber); animation: live-pulse 1.6s ease-out infinite; }
+.gh-push-dot.done    { background: var(--green); }
+.gh-push-name { flex: 1; font-family: var(--code); font-size: 11px; }
+.gh-push-mark { font-weight: 700; font-size: 11px; min-width: 12px; text-align: right; }
+.gh-push-stage.done .gh-push-mark    { color: var(--green); }
+.gh-push-stage.running .gh-push-mark { color: var(--amber); }
+.gh-push-meta {
+  display: flex; flex-wrap: wrap; gap: 14px;
+  padding-top: 8px; border-top: 1px solid var(--border);
+  font-size: 10.5px; color: var(--text2);
+}
+.gh-push-meta strong { color: var(--text1); font-weight: 600; }
+
+/* ── GitHub Auth widget (OAuth Device Flow) ─────────────── */
+.gh-auth {
+  border: 1px solid var(--border);
+  border-radius: var(--r8);
+  background: var(--bg1);
+  padding: 10px 12px;
+  margin-bottom: 12px;
+}
+.gh-auth.signed-in { border-color: rgba(5,150,105,.28); background: rgba(5,150,105,.04); }
+.gh-auth.pending   { border-color: rgba(217,119,6,.30); background: rgba(217,119,6,.04); }
+.gh-auth-inner {
+  display: flex; align-items: center; gap: 10px;
+  font-size: 12px; color: var(--text1);
+}
+.gh-auth-inner > .ti { font-size: 18px; color: var(--text2); }
+.gh-auth-label { font-size: 12px; font-weight: 600; color: var(--text1); }
+.gh-auth-sub   { font-size: 10.5px; color: var(--text3); margin-top: 2px; line-height: 1.45; }
+.gh-auth-sub a { color: var(--cyan); }
+.gh-auth-code {
+  font-family: var(--code);
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--text1);
+  background: var(--bg2);
+  border: 1px dashed var(--border);
+  border-radius: var(--r8);
+  padding: 6px 10px;
+  display: inline-block;
+  margin: 6px 0;
+  user-select: all;
+}
+.gh-auth-avatar {
+  width: 28px; height: 28px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  object-fit: cover;
+  flex: 0 0 28px;
+}
+.gh-auth-pill {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: .04em;
+  text-transform: uppercase;
+  padding: 1px 6px;
+  border-radius: 999px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  color: var(--text3);
+  margin-left: 4px;
+}
+.gh-auth-pill.ok { color: var(--green); border-color: rgba(5,150,105,.28); background: rgba(5,150,105,.08); }
+
+/* ── Commit-source toggle (bank scaffold vs workspace) ───── */
+.src-toggle {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 10px;
+  margin-bottom: 8px;
+}
+.src-opt {
+  display: flex; align-items: flex-start; gap: 10px;
+  border: 1px solid var(--border);
+  border-radius: var(--r8);
+  padding: 10px 12px;
+  cursor: pointer;
+  background: var(--bg1);
+  transition: border-color .12s ease, background .12s ease;
+}
+.src-opt:hover { border-color: var(--cyan); }
+.src-opt.active {
+  border-color: var(--cyan);
+  background: rgba(37,99,235,.04);
+}
+.src-opt input[type="radio"] { margin-top: 3px; }
+.src-opt-title { font-size: 12px; font-weight: 600; color: var(--text1); }
+.src-opt-title .ti { font-size: 14px; margin-right: 4px; color: var(--text2); }
+.src-opt-sub   { font-size: 10.5px; color: var(--text3); margin-top: 3px; line-height: 1.45; }
+
+/* ── UI Wireframe mocks in DocViewer ─────────────────────── */
+.wireframe-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 14px;
+  margin-top: 10px;
+}
+.wireframe {
+  margin: 0;
+  display: flex; flex-direction: column;
+  border: 1px solid var(--border);
+  border-radius: var(--r8);
+  background: var(--bg1);
+  box-shadow: var(--shadow-xs);
+  overflow: hidden;
+}
+.wireframe-frame {
+  background: #ffffff;
+  padding: 0;
+  line-height: 0;
+}
+.wireframe-frame svg { display: block; width: 100%; height: auto; }
+.wireframe-caption {
+  font-size: 10px;
+  color: var(--text2);
+  padding: 8px 10px;
+  border-top: 1px solid var(--border);
+  background: var(--bg2);
+  line-height: 1.4;
+}
+
+/* ── AWS Fargate deploy card ─────────────────────────────── */
+.aws-deploy-card {
+  margin-top: 6px;
+  padding: 14px 16px;
+  border: 1px solid var(--border);
+  border-radius: var(--r8);
+  background: var(--bg1);
+  box-shadow: var(--shadow-xs);
+}
+.aws-deploy-head {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 700; color: var(--text1);
+  margin-bottom: 10px;
+}
+.aws-deploy-head i { font-size: 16px; color: #ff9900; }
+.aws-running-pill {
+  margin-left: auto;
+  font-size: 9px; font-weight: 700; letter-spacing: .06em;
+  padding: 2px 8px; border-radius: 999px;
+  background: var(--amber2); color: var(--amber); border: 1px solid rgba(217,119,6,.3);
+  display: inline-flex; align-items: center; gap: 6px;
+}
+.aws-done-pill {
+  margin-left: auto;
+  font-size: 9px; font-weight: 700; letter-spacing: .06em;
+  padding: 2px 8px; border-radius: 999px;
+  background: var(--green2); color: var(--green); border: 1px solid rgba(5,150,105,.3);
+}
+.aws-fail-pill {
+  margin-left: auto;
+  font-size: 9px; font-weight: 700; letter-spacing: .06em;
+  padding: 2px 8px; border-radius: 999px;
+  background: var(--red2); color: var(--red); border: 1px solid rgba(220,38,38,.3);
+}
+.aws-pipeline .pr-stage-row {
+  flex-wrap: wrap;
+}
+.aws-stage-line {
+  width: 100%;
+  margin-top: 4px;
+  padding-left: 22px;
+  font-family: var(--code);
+  font-size: 10px;
+  color: var(--text2);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+.aws-stage-dur {
+  margin-left: auto;
+  font-family: var(--code);
+  font-size: 10px;
+  color: var(--text3);
+}
+
+/* ── AWS deploy preflight card ───────────────────────────── */
+.aws-preflight-card {
+  margin: 6px 0 14px;
+  padding: 12px 14px;
+  border: 1px solid var(--border);
+  border-radius: var(--r8);
+  background: var(--bg1);
+  box-shadow: var(--shadow-xs);
+}
+.aws-preflight-card.all-ok  { border-color: rgba(5,150,105,.35); background: var(--green2); }
+.aws-preflight-card.has-fail { border-color: rgba(220,38,38,.35); background: var(--red2); }
+.aws-preflight-head {
+  display: flex; align-items: center; gap: 8px;
+  font-size: 12px; font-weight: 700; color: var(--text1);
+  margin-bottom: 8px;
+}
+.aws-preflight-head i { font-size: 14px; color: var(--cyan); }
+.aws-preflight-rows {
+  display: flex; flex-direction: column;
+  gap: 4px;
+  margin-bottom: 8px;
+}
+.aws-preflight-row {
+  display: grid;
+  grid-template-columns: 18px 200px 1fr;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 8px;
+  border-radius: var(--r8);
+  font-size: 11px;
+  background: var(--bg1);
+  border: 1px solid var(--border);
+}
+.aws-preflight-row.ok   { border-color: rgba(5,150,105,.25); background: var(--bg1); }
+.aws-preflight-row.fail { border-color: rgba(220,38,38,.3);  background: var(--bg1); }
+.aws-preflight-mark {
+  width: 18px; height: 18px;
+  display: inline-flex; align-items: center; justify-content: center;
+  border-radius: 999px;
+  font-size: 11px; font-weight: 700;
+  background: var(--bg2);
+}
+.aws-preflight-row.ok   .aws-preflight-mark { background: var(--green2); color: var(--green); }
+.aws-preflight-row.fail .aws-preflight-mark { background: var(--red2);   color: var(--red); }
+.aws-preflight-label {
+  font-weight: 600;
+  color: var(--text1);
+}
+.aws-preflight-detail {
+  font-family: var(--code);
+  font-size: 10px;
+  color: var(--text2);
+  word-break: break-word;
+}
+.aws-preflight-hint {
+  grid-column: 2 / -1;
+  margin-top: 2px;
+  font-size: 10px;
+  font-family: var(--code);
+  color: var(--text2);
+  padding: 4px 8px;
+  background: var(--bg3);
+  border-radius: 4px;
+  border-left: 2px solid var(--red);
+}
+.aws-preflight-actions {
+  display: flex;
+  gap: 8px;
+  padding-top: 4px;
+  border-top: 1px dashed var(--border);
+}

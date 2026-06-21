@@ -1,0 +1,254 @@
+/* ── Dashboard & Observability ────────────────────────────── */
+.obs-panel {
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--r12);
+  padding: .875rem 1rem 1rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.obs-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: .625rem;
+  margin-bottom: .75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.obs-head-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text1);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.obs-head-title i { color: var(--cyan); font-size: 14px; }
+
+.obs-head-meta {
+  font-size: 11px;
+  color: var(--text3);
+  font-family: var(--code);
+}
+
+.obs-empty {
+  font-size: 12px;
+  color: var(--text3);
+  padding: .75rem 0;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.obs-empty.obs-err { color: var(--red); }
+
+.obs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: .625rem;
+}
+
+.obs-card {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--r8);
+  padding: .625rem .75rem;
+}
+
+.obs-card-head {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: .5rem;
+}
+
+.dot {
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+.dot.up   { background: var(--green); box-shadow: 0 0 0 3px var(--green2); }
+.dot.down { background: var(--red);   box-shadow: 0 0 0 3px var(--red2); }
+
+.obs-port {
+  font-family: var(--code);
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--cyan);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+.obs-port:hover { text-decoration: underline; }
+.obs-port i { font-size: 11px; }
+
+.obs-state {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  padding: 2px 8px;
+  border-radius: 999px;
+}
+.obs-state.ok  { background: var(--green2); color: var(--green); }
+.obs-state.bad { background: var(--red2);   color: var(--red); }
+
+.obs-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: .5rem;
+}
+
+.obs-metric-lbl {
+  font-size: 9.5px;
+  font-weight: 600;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+  color: var(--text3);
+  margin-bottom: 2px;
+}
+
+.obs-metric-val {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text1);
+}
+.obs-metric-val.mono {
+  font-family: var(--code);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+/* ── Monitoring phase: pipeline status + per-phase log groups ── */
+.mon-section { margin-top: 1rem; }
+
+.mon-section-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text1);
+  margin-bottom: .625rem;
+}
+.mon-section-head i { font-size: 13px; color: var(--cyan); }
+
+.mon-status-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: .5rem;
+}
+
+.mon-status-cell {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: .5rem .625rem;
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--r8);
+  position: relative;
+}
+.mon-status-cell.is-current { border-color: var(--cyan); box-shadow: 0 0 0 3px var(--cyan4); }
+
+.mon-status-icon {
+  width: 26px; height: 26px;
+  flex-shrink: 0;
+  display: flex; align-items: center; justify-content: center;
+  border-radius: var(--r8);
+  background: var(--bg3);
+  color: var(--text2);
+}
+.mon-status-icon i { font-size: 13px; }
+
+.mon-status-body { min-width: 0; }
+.mon-status-lbl {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text1);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.mon-status-state {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+  margin-top: 1px;
+}
+
+.mon-status-cell.st-active   .mon-status-state { color: var(--cyan); }
+.mon-status-cell.st-running  .mon-status-state { color: var(--amber); }
+.mon-status-cell.st-pending  .mon-status-state { color: var(--amber); }
+.mon-status-cell.st-done     .mon-status-state { color: var(--green); }
+.mon-status-cell.st-rejected .mon-status-state { color: var(--red); }
+.mon-status-cell.st-locked   .mon-status-state { color: var(--text3); }
+
+.mon-status-cell.st-active   .mon-status-icon { background: var(--cyan3);   color: var(--cyan); }
+.mon-status-cell.st-running  .mon-status-icon { background: var(--amber2);  color: var(--amber); }
+.mon-status-cell.st-pending  .mon-status-icon { background: var(--amber2);  color: var(--amber); }
+.mon-status-cell.st-done     .mon-status-icon { background: var(--green2);  color: var(--green); }
+.mon-status-cell.st-rejected .mon-status-icon { background: var(--red2);    color: var(--red); }
+
+.mon-status-cell.st-live     .mon-status-state { color: var(--green); font-weight: 600; }
+.mon-status-cell.st-live     .mon-status-icon  { background: var(--green2); color: var(--green); }
+
+.mon-log-group {
+  background: var(--bg1);
+  border: 1px solid var(--border);
+  border-radius: var(--r8);
+  margin-bottom: .5rem;
+  overflow: hidden;
+}
+
+.mon-log-group-head {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: .5rem .75rem;
+  background: var(--bg2);
+  border-bottom: 1px solid var(--border);
+}
+.mon-log-group-head i { font-size: 12px; color: var(--cyan); }
+
+.mon-log-group-title {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text1);
+}
+
+.mon-log-group-count {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 700;
+  color: var(--text2);
+  background: var(--bg3);
+  padding: 1px 7px;
+  border-radius: 999px;
+  font-family: var(--code);
+}
+
+.mon-log-group-body {
+  padding: .375rem .5rem;
+  max-height: 220px;
+  overflow-y: auto;
+}
+
+.mon-log-row {
+  display: flex;
+  gap: 8px;
+  padding: 3px 4px;
+  font-size: 11px;
+  line-height: 1.5;
+}
+.mon-log-row .log-t {
+  color: var(--text3);
+  font-family: var(--code);
+  flex-shrink: 0;
+  min-width: 36px;
+}
+.mon-log-row .log-m { color: var(--text1); word-break: break-word; }

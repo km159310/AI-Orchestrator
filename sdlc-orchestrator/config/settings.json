@@ -1,0 +1,25 @@
+{
+  "app": {
+    "name": "SDLC Orchestrator",
+    "version": "1.0.0",
+    "project": "ABC Bank Application"
+  },
+  "pipeline": {
+    "autoTriggerDelay": 500,
+    "agentStepMin": 480,
+    "agentStepMax": 860,
+    "agentStartDelay": 280
+  },
+  "brd": {
+    "parseStepDuration": 750,
+    "minCharsForExtract": 50,
+    "minCharsForSuggestions": 30
+  },
+  "prAgent": {
+    "stageIntervalMs": 1100
+  },
+  "ports": {
+    "default": 3000,
+    "instances": [3001, 3002]
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "name": "sdlc-orchestrator",
+  "version": "1.0.0",
+  "description": "AI-Powered SDLC Pipeline — ABC Bank Application",
+  "private": true,
+  "scripts": {
+    "start": "npx --yes serve@latest -l 3000 .",
+    "dev": "npx --yes serve@latest -l 3000 .",
+    "serve:python": "python -m http.server 3000"
+  }
+}

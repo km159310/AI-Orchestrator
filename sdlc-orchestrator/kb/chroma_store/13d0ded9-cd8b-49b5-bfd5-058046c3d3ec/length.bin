@@ -1,0 +1,2 @@
+invalid type: string "SDLC Orchestrator pipeline phases (in order):\nRequirements â†’ Design â†’ Development â†’ Testing â†’ PR (Pull Request)\nâ†’ PAR Approval â†’ Deployment â†’ Release Review â†’ Dashboard & Observability.\n\nSource listing:\n// src/data/phases.js\nconst PHASES = [\n  { id: 'req',    label: 'Requirements', icon: 'ti-file-description' },\nritical | PagerDuty + Slack |
+gest.ÿÿÿÿÿ
