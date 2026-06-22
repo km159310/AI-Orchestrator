@@ -1,7 +1,7 @@
 [
   {
-    "title": "Rewards & cashback",
-    "icon": "ti-gift",
-    "desc": "Track reward points and cashback earned per card, with redemption flow and partner-merchant browse."
+    "title": "Card controls",
+    "icon": "ti-settings",
+    "desc": "Per-card controls: online, contactless, international, ATM toggles plus per-channel spend limits."
   }
 ]
