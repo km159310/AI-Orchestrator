@@ -56,7 +56,9 @@ const SignOff = (() => {
     // functions are kept (unused) in case the UI is ever re-introduced.)
 
     // Test phase: when all signed, auto-arm the push pipeline once.
-    if (isTest && all && _push.idx < 0 && !_push.autoArmed) {
+    // Skip auto-arm if a previous attempt left an error on the state —
+    // we want the user to click Retry deliberately rather than spam GitHub.
+    if (isTest && all && _push.idx < 0 && !_push.autoArmed && _push.error == null) {
       _push.autoArmed = true;
       setTimeout(() => _startPush(), 600);
       Logger.add('Testing: all stakeholders signed — committing & raising PR automatically', 'info');
@@ -82,12 +84,22 @@ const SignOff = (() => {
       </div>`;
     });
 
-    const pushing = isTest && _push.idx >= 0 && _push.idx < PUSH_STAGES.length;
-    const pushed  = isTest && _push.idx >= PUSH_STAGES.length && _push.result;
-    const approveLabel = isTest ? 'Commit and Raise PR Request' : 'Approve & advance';
-    const approveIcon  = isTest ? 'ti-git-pull-request' : 'ti-circle-check';
+    const hasPushError = isTest && _push.error != null;
+    const pushing = isTest && _push.idx >= 0 && _push.idx < PUSH_STAGES.length && !hasPushError;
+    const pushed  = isTest && _push.idx >= PUSH_STAGES.length && _push.result && !hasPushError;
+    const approveLabel = !isTest
+      ? 'Approve & advance'
+      : (hasPushError ? 'Retry — Commit and Raise PR' : 'Commit and Raise PR Request');
+    const approveIcon  = !isTest
+      ? 'ti-circle-check'
+      : (hasPushError ? 'ti-refresh' : 'ti-git-pull-request');
     const disabled = !all || pushing || pushed;
     const onClick  = isTest ? 'SignOff.onApproveTest()' : 'App.approvePhase()';
+    const disabledTitle = !all
+      ? `Approve all ${defs.length} stakeholders above first`
+      : pushing ? 'Push in progress…'
+      : pushed  ? 'Push complete — advancing to PR phase'
+      : '';
 
     let btnInner;
     if (pushing) btnInner = `<span class="spin"></span> Pushing to GitHub…`;
@@ -95,9 +107,12 @@ const SignOff = (() => {
     else btnInner = `<i class="ti ${approveIcon}" aria-hidden="true"></i> ${approveLabel}`;
 
     h += `<div class="appr-bar">
-      <button class="btn btn-ok" ${disabled ? 'disabled' : ''} onclick="${onClick}">${btnInner}</button>
+      <button class="btn btn-ok" ${disabled ? 'disabled' : ''}${disabledTitle ? ` title="${_escape(disabledTitle)}"` : ''} onclick="${onClick}">${btnInner}</button>
       ${RejectControl.renderButton()}
     </div>`;
+    if (isTest && !all) {
+      h += `<div style="font-size:9.5px;color:var(--text3);margin-top:.375rem">↑ Approve all ${defs.length} stakeholders above to enable the commit &amp; PR step.</div>`;
+    }
 
     if (isTest && _push.idx >= 0) {
       h += _renderPushCard();
@@ -160,9 +175,17 @@ const SignOff = (() => {
   }
 
   function _startPush() {
-    if (_push.idx >= 0) return;
+    // Reset any stale per-attempt state — covers both first-fire and the
+    // retry-after-error path. Without this a retry click finds idx === 5
+    // from the previous failed run and bails out.
+    const isRetry = _push.error != null;
     _push.idx = 0;
-    Logger.add('GitHub: pushing ABC Bank scaffold…', 'info');
+    _push.result = null;
+    _push.error = null;
+    _push.scheduled = false;
+    Logger.add(isRetry
+      ? 'GitHub: retrying ABC Bank push…'
+      : 'GitHub: pushing ABC Bank scaffold…', 'info');
     App.renderPanel();
     _tickPush();
     _firePushApi();
@@ -238,7 +261,9 @@ const SignOff = (() => {
   }
 
   function onApproveTest() {
-    if (_push.idx >= 0) return;
+    // Block extra clicks only while a genuine push is in flight (no error).
+    // After an error we treat the click as "retry".
+    if (_push.idx >= 0 && _push.error == null) return;
     _startPush();
   }
 
