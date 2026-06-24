@@ -1775,6 +1775,96 @@ def github_list_prs():
         return {'ok': False, 'error': f'github pulls failed: {e}'}
 
 
+# ── Branch creation — for the "click feature chip → branch" flow ──
+# Existing-project workflow creates a real feature/<key> branch off the
+# repo's default branch when the user clicks a detected feature in the
+# Requirements phase. Mock-fallback when no token/repo is configured.
+
+def github_create_branch(body):
+    body = body or {}
+    branch = (body.get('branch') or '').strip()
+    if not branch:
+        return {'ok': False, 'error': 'branch is required'}
+    from_branch = (body.get('fromBranch') or os.environ.get('GITHUB_BASE_BRANCH') or '').strip()
+
+    token     = (os.environ.get('GITHUB_TOKEN') or '').strip()
+    repo_slug = (os.environ.get('GITHUB_REPO')  or '').strip()
+    if not token or not repo_slug:
+        return {
+            'ok':         True,
+            'mock':       True,
+            'repo':       repo_slug or 'AI-Orchestrator/ABC-Bank-v1.0',
+            'branch':     branch,
+            'fromBranch': from_branch or 'main',
+            'sha':        'a1b2c3d4',
+            'branchUrl':  None,
+            'message':    'Mock branch — set GITHUB_TOKEN and GITHUB_REPO for a real ref.',
+        }
+
+    api = f'https://api.github.com/repos/{repo_slug}'
+    try:
+        # If fromBranch wasn't given, ask GitHub for the repo's default branch.
+        if not from_branch:
+            status_r, repo_meta = _gh_request('GET', api, token)
+            if status_r >= 400 or not isinstance(repo_meta, dict):
+                msg = repo_meta.get('message') if isinstance(repo_meta, dict) else str(repo_meta)[:200]
+                return {'ok': False, 'error': f'github repo lookup failed ({status_r}): {msg}'}
+            from_branch = repo_meta.get('default_branch') or 'main'
+
+        # Resolve source SHA.
+        status, base_ref = _gh_request('GET', f'{api}/git/ref/heads/{from_branch}', token)
+        if status >= 400 or not isinstance(base_ref, dict):
+            msg = base_ref.get('message') if isinstance(base_ref, dict) else str(base_ref)[:200]
+            return {'ok': False, 'error': f'github base ref lookup failed ({status}): {msg}'}
+        base_sha = (base_ref.get('object') or {}).get('sha')
+        if not base_sha:
+            return {'ok': False, 'error': 'github base ref had no commit SHA'}
+
+        # Check if the target branch already exists.
+        status_b, existing = _gh_request('GET', f'{api}/git/ref/heads/{branch}', token)
+        if status_b == 200 and isinstance(existing, dict):
+            existing_sha = (existing.get('object') or {}).get('sha') or ''
+            return {
+                'ok':         True,
+                'mock':       False,
+                'repo':       repo_slug,
+                'branch':     branch,
+                'fromBranch': from_branch,
+                'sha':        existing_sha,
+                'shortSha':   existing_sha[:8],
+                'branchUrl':  f'https://github.com/{repo_slug}/tree/{branch}',
+                'alreadyExists': True,
+            }
+        if status_b not in (200, 404):
+            msg = existing.get('message') if isinstance(existing, dict) else str(existing)[:200]
+            return {'ok': False, 'error': f'github head ref lookup failed ({status_b}): {msg}'}
+
+        # Create the new branch ref.
+        status_c, created = _gh_request('POST', f'{api}/git/refs', token, {
+            'ref': f'refs/heads/{branch}',
+            'sha': base_sha,
+        })
+        if status_c >= 400 or not isinstance(created, dict):
+            msg = created.get('message') if isinstance(created, dict) else str(created)[:200]
+            return {'ok': False, 'error': f'github branch create failed ({status_c}): {msg}'}
+
+        return {
+            'ok':         True,
+            'mock':       False,
+            'repo':       repo_slug,
+            'branch':     branch,
+            'fromBranch': from_branch,
+            'sha':        base_sha,
+            'shortSha':   base_sha[:8],
+            'branchUrl':  f'https://github.com/{repo_slug}/tree/{branch}',
+            'alreadyExists': False,
+        }
+    except urllib.error.URLError as e:
+        return {'ok': False, 'error': f'github branch create failed (network): {e}'}
+    except Exception as e:  # noqa: BLE001
+        return {'ok': False, 'error': f'github branch create failed: {e}'}
+
+
 # ── AWS Fargate deploy pipeline ────────────────────────────────
 # Runs `terraform apply` → `docker build` → ECR push → `aws ecs
 # update-service` against the user's AWS account. Triggered from the
@@ -2424,6 +2514,8 @@ class Handler(http.server.SimpleHTTPRequestHandler):
             return self._handle_jenkins_trigger()
         if path == '/api/github/push':
             return self._json(200, github_push(self._read_json_body()))
+        if path == '/api/github/create-branch':
+            return self._json(200, github_create_branch(self._read_json_body()))
         if path == '/api/deploy/aws':
             return self._json(200, aws_deploy_start())
         if path == '/api/deploy/aws/destroy':

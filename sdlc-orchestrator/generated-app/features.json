@@ -1,7 +1,7 @@
 [
   {
-    "title": "Card controls",
-    "icon": "ti-settings",
-    "desc": "Per-card controls: online, contactless, international, ATM toggles plus per-channel spend limits."
+    "title": "Lost / stolen card",
+    "icon": "ti-credit-card-off",
+    "desc": "Report a card lost or stolen, instantly block transactions, request replacement, and ship a virtual card while the plastic is in transit."
   }
 ]

@@ -2,14 +2,45 @@
 import { useStore } from "@/lib/store";
 import { INIT_PASTE } from "@/data/brd";
 import { api } from "@/lib/api";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
+
+interface FeatBranch { url: string | null; alreadyExists: boolean; }
 
 export function BrdInput() {
   const brd = useStore(s => s.brd);
+  const projectType = useStore(s => s.projectType);
   const setBrd = useStore(s => s.setBrd);
   const addLog = useStore(s => s.addLog);
+  const setPr = useStore(s => s.setPr);
   const timerRef = useRef<number | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
+  const [creating, setCreating] = useState<Record<string, boolean>>({});
+  const [created, setCreated] = useState<Record<string, FeatBranch>>({});
+
+  async function createFeatureBranch(key: string, label: string) {
+    if (creating[key] || created[key]) return;
+    const branch = `feature/${key}`;
+    setCreating(s => ({ ...s, [key]: true }));
+    addLog(`Creating GitHub branch ${branch} for feature "${label}"…`, "info");
+    try {
+      const res = await api.createBranch(branch);
+      if (!res.ok) {
+        addLog(`Branch create failed for ${branch} — ${res.error ?? "unknown"}`, "danger");
+        return;
+      }
+      const where = res.fromBranch ? ` from ${res.fromBranch}` : "";
+      const tag   = res.alreadyExists ? "already exists" : `created${where} @ ${res.shortSha ?? "?"}`;
+      addLog(`✓ ${branch} ${tag} on ${res.repo ?? "GitHub"}`, "success");
+      setCreated(s => ({ ...s, [key]: { url: res.branchUrl ?? null, alreadyExists: !!res.alreadyExists } }));
+      // Tell the PR phase to use this branch when the user reaches it.
+      setPr({ branch });
+    } catch (e) {
+      const msg = e instanceof Error ? e.message : String(e);
+      addLog(`Branch create failed for ${branch} — ${msg}`, "danger");
+    } finally {
+      setCreating(s => ({ ...s, [key]: false }));
+    }
+  }
 
   useEffect(() => () => {
     if (timerRef.current) {
@@ -165,15 +196,60 @@ export function BrdInput() {
               <div className="detected-feats">
                 <div className="detected-feats-h">
                   <i className="ti ti-sparkles" aria-hidden="true" />
-                  Features detected — will be deployed with the bank app
+                  {projectType === "old"
+                    ? "Features detected — click a chip to create its branch on GitHub"
+                    : "Features detected — will be deployed with the bank app"}
                 </div>
                 <div className="detected-feats-row">
-                  {ext.detectedFeatures.map(f => (
-                    <span key={f.key} className="detected-feat-chip" title={f.desc}>
-                      <i className={`ti ${f.icon}`} aria-hidden="true" />
-                      {f.label}
-                    </span>
-                  ))}
+                  {ext.detectedFeatures.map(f => {
+                    const c = created[f.key];
+                    const isCreating = !!creating[f.key];
+                    if (projectType !== "old") {
+                      return (
+                        <span key={f.key} className="detected-feat-chip" title={f.desc}>
+                          <i className={`ti ${f.icon}`} aria-hidden="true" />
+                          {f.label}
+                        </span>
+                      );
+                    }
+                    if (c) {
+                      // After creation: show as link to the branch on GitHub
+                      const inner = (
+                        <>
+                          <i className="ti ti-git-branch" aria-hidden="true" />
+                          {f.label}
+                          <span className="detected-feat-chip-done">
+                            <i className="ti ti-check" aria-hidden="true" />
+                            feature/{f.key}
+                            {c.alreadyExists && <span style={{ opacity: .7, marginLeft: 4 }}>(exists)</span>}
+                          </span>
+                        </>
+                      );
+                      return c.url ? (
+                        <a key={f.key} className="detected-feat-chip created" href={c.url} target="_blank" rel="noopener noreferrer" title={`Open feature/${f.key} on GitHub`}>
+                          {inner}
+                        </a>
+                      ) : (
+                        <span key={f.key} className="detected-feat-chip created" title={`feature/${f.key}`}>
+                          {inner}
+                        </span>
+                      );
+                    }
+                    return (
+                      <button
+                        key={f.key}
+                        type="button"
+                        className="detected-feat-chip clickable"
+                        title={`Click to create feature/${f.key} on GitHub`}
+                        onClick={() => void createFeatureBranch(f.key, f.label)}
+                        disabled={isCreating}
+                      >
+                        <i className={`ti ${isCreating ? "ti-loader-2 spin-i" : f.icon}`} aria-hidden="true" />
+                        {f.label}
+                        <i className="ti ti-plus" aria-hidden="true" style={{ fontSize: 10, marginLeft: 4 }} />
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
             )}
