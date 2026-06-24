@@ -1,7 +1,12 @@
 [
   {
-    "title": "FICO score report",
-    "icon": "ti-credit-card",
-    "desc": "Show customers their latest FICO credit score with month-over-month trend, key factors, and tips to improve."
+    "title": "Lost / stolen card",
+    "icon": "ti-credit-card-off",
+    "desc": "Report a card lost or stolen, instantly block transactions, request replacement, and ship a virtual card while the plastic is in transit."
+  },
+  {
+    "title": "EMI on transactions",
+    "icon": "ti-calendar-stats",
+    "desc": "Convert eligible card transactions to EMI with tenure selection, interest preview, and approval workflow."
   }
 ]

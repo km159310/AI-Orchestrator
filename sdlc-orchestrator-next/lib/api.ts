@@ -68,6 +68,20 @@ export interface PrCounts {
   merged: number;
 }
 
+export interface CreateBranchResponse {
+  ok: boolean;
+  mock?: boolean;
+  repo?: string;
+  branch?: string;
+  fromBranch?: string;
+  sha?: string;
+  shortSha?: string;
+  branchUrl?: string | null;
+  alreadyExists?: boolean;
+  error?: string;
+  message?: string;
+}
+
 export interface PrListResponse {
   ok: boolean;
   mock?: boolean;
@@ -200,6 +214,9 @@ export const api = {
   extract:     (text: string) => _postJson<ExtractResponse>("/api/extract", { text }),
   githubPush:  () => _post<GithubPushResponse>("/api/github/push"),
   listPrs:     () => _get<PrListResponse>("/api/github/prs"),
+  createBranch: (branch: string, fromBranch?: string) =>
+    _postJson<CreateBranchResponse>("/api/github/create-branch",
+      fromBranch ? { branch, fromBranch } : { branch }),
 
   // ── Jenkins ───────────────────────────────────────────
   jenkinsInfo:    () => _get<JenkinsInfoResponse>("/api/jenkins/info"),

@@ -44,6 +44,39 @@ export function SignOff({ pid }: Props) {
   const [pushResult, setPushResult] = useState<GithubPushResponse | null>(null);
   const [pushError, setPushError]   = useState<string | null>(null);
 
+  const list = SIGNOFFS[pid] || [];
+  const allSigned = list.length > 0 && list.every(p => approvers[p.name]);
+  const isTest = pid === "test";
+  const hasPushError = isTest && pushError !== null;
+
+  const startPush = () => {
+    // Reset all push state so a previous error (or a stuck stage from a
+    // half-failed run) doesn't keep the button disabled on the retry click.
+    setPushError(null);
+    setPushResult(null);
+    setPushIdx(0);
+    addLog(hasPushError
+      ? "GitHub: retrying ABC Bank push…"
+      : "GitHub: pushing ABC Bank scaffold…", "info");
+    api.githubPush()
+      .then(res => {
+        if (!res.ok) {
+          setPushError(res.error || "unknown error");
+          return;
+        }
+        setPushResult(res);
+        if (res.mock) {
+          addLog(`GitHub: ${res.message || "running in mock mode (no GITHUB_TOKEN/GITHUB_REPO set)"}`, "warn");
+        } else {
+          addLog(`GitHub: real push complete · commit ${res.commitSha} on ${res.branch}`, "success");
+        }
+      })
+      .catch((err: unknown) => {
+        const msg = err instanceof Error ? err.message : String(err);
+        setPushError(msg);
+      });
+  };
+
   useEffect(() => {
     if (pushIdx < 0) return;                              // not pushing yet
     if (pushIdx > PUSH_STAGES.length) return;             // approvePhase already scheduled
@@ -75,58 +108,36 @@ export function SignOff({ pid }: Props) {
     return () => window.clearTimeout(t);
   }, [pushIdx, addLog, approvePhase, pushResult, pushError]);
 
-  const list = SIGNOFFS[pid] || [];
-  const allSigned = list.length > 0 && list.every(p => approvers[p.name]);
-  const isTest = pid === "test";
-
   // Testing phase auto-deploys once every stakeholder has signed off —
   // a short delay so the user sees the "all signed" state, then the
   // GitHub push starts on its own. Rejecting before the delay elapses
-  // unmounts SignOff and cancels the timer.
+  // unmounts SignOff and cancels the timer. Only fires once per session;
+  // after an error the user retries via the button (which calls startPush).
   // (Declared above the early-return below to keep hook ordering stable.)
   useEffect(() => {
     if (!isTest) return;
     if (!allSigned) return;
-    if (pushIdx >= 0) return; // push already started
+    if (pushIdx >= 0) return;       // push already started
+    if (pushError) return;          // an error was surfaced — let user click Retry
     addLog("Testing: all stakeholders signed — committing & raising PR automatically", "info");
     const t = window.setTimeout(() => {
-      addLog("GitHub: pushing ABC Bank scaffold…", "info");
-      setPushIdx(0);
-      // Fire the real backend push in parallel with the client-side
-      // stage animation. The promise handlers always update local state
-      // — we deliberately do not cancel them on effect re-run, because
-      // setPushIdx(0) itself triggers a re-run and would otherwise drop
-      // the real-push response on the floor.
-      api.githubPush()
-        .then(res => {
-          if (!res.ok) {
-            setPushError(res.error || "unknown error");
-            return;
-          }
-          setPushResult(res);
-          if (res.mock) {
-            addLog(`GitHub: ${res.message || "running in mock mode (no GITHUB_TOKEN/GITHUB_REPO set)"}`, "warn");
-          } else {
-            addLog(`GitHub: real push complete · commit ${res.commitSha} on ${res.branch}`, "success");
-          }
-        })
-        .catch((err: unknown) => {
-          const msg = err instanceof Error ? err.message : String(err);
-          setPushError(msg);
-        });
+      startPush();
     }, 600);
     return () => window.clearTimeout(t);
-  }, [isTest, allSigned, pushIdx, addLog]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isTest, allSigned, pushIdx, pushError, addLog]);
 
   if (!list.length) return null;
 
-  // The Testing phase advances by committing + raising a PR — relabel
-  // the approve button and stage a mock GitHub push before approvePhase
-  // is invoked.
-  const approveLabel = isTest ? "Commit and Raise PR Request" : "Approve & advance";
-  const approveIcon  = isTest ? "ti-git-pull-request" : "ti-circle-check";
-  const pushing      = isTest && pushIdx >= 0 && pushIdx < PUSH_STAGES.length;
-  const pushed       = isTest && pushIdx >= PUSH_STAGES.length;
+  const approveLabel = !isTest
+    ? "Approve & advance"
+    : hasPushError ? "Retry — Commit and Raise PR" : "Commit and Raise PR Request";
+  const approveIcon  = !isTest
+    ? "ti-circle-check"
+    : hasPushError ? "ti-refresh" : "ti-git-pull-request";
+  // Active animation only counts while we don't have an error to retry.
+  const pushing      = isTest && pushIdx >= 0 && pushIdx < PUSH_STAGES.length && !hasPushError;
+  const pushed       = isTest && pushIdx >= PUSH_STAGES.length && !hasPushError;
   const apiFiles     = pushResult?.filesCount;
   const filesNote    = apiFiles && apiFiles > 0
     ? String(apiFiles)
@@ -143,26 +154,9 @@ export function SignOff({ pid }: Props) {
 
   const onApprove = () => {
     if (!isTest) { approvePhase(); return; }
-    if (pushIdx >= 0) return; // already in flight
-    addLog("GitHub: pushing ABC Bank scaffold…", "info");
-    setPushIdx(0);
-    api.githubPush()
-      .then(res => {
-        if (!res.ok) {
-          setPushError(res.error || "unknown error");
-          return;
-        }
-        setPushResult(res);
-        if (res.mock) {
-          addLog(`GitHub: ${res.message || "running in mock mode (no GITHUB_TOKEN/GITHUB_REPO set)"}`, "warn");
-        } else {
-          addLog(`GitHub: real push complete · commit ${res.commitSha} on ${res.branch}`, "success");
-        }
-      })
-      .catch((err: unknown) => {
-        const msg = err instanceof Error ? err.message : String(err);
-        setPushError(msg);
-      });
+    // While a push is genuinely in-flight (no error yet), ignore extra clicks.
+    if (pushIdx >= 0 && !hasPushError) return;
+    startPush();
   };
 
   return (
@@ -190,13 +184,27 @@ export function SignOff({ pid }: Props) {
         );
       })}
       <div className="appr-bar">
-        <button className="btn btn-ok" disabled={!allSigned || pushing || pushed} onClick={onApprove}>
+        <button
+          className="btn btn-ok"
+          disabled={!allSigned || pushing || pushed}
+          title={
+            !allSigned ? `Approve all ${list.length} stakeholders above first`
+              : pushing ? "Push in progress…"
+              : pushed  ? "Push complete — advancing to PR phase"
+              : undefined
+          }
+          onClick={onApprove}>
           {pushing ? (<><span className="spin" /> Pushing to GitHub…</>)
             : pushed ? (<>✓ Pushed — advancing to PR…</>)
             : (<><i className={`ti ${approveIcon}`} aria-hidden="true" /> {approveLabel}</>)}
         </button>
         <RejectControl />
       </div>
+      {isTest && !allSigned && (
+        <div style={{ fontSize: 9.5, color: "var(--text3)", marginTop: ".375rem" }}>
+          ↑ Approve all {list.length} stakeholders above to enable the commit &amp; PR step.
+        </div>
+      )}
 
       {isTest && pushIdx >= 0 && (
         <div className="gh-push-card">
