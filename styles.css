@@ -1,0 +1,261 @@
+:root {
+  --blue:   #2563eb;
+  --blue2:  #1d4ed8;
+  --indigo: #4f46e5;
+  --green:  #059669;
+  --red:    #dc2626;
+  --text1:  #0f172a;
+  --text2:  #475569;
+  --text3:  #94a3b8;
+  --bg:     #f6f8fb;
+  --card:   #ffffff;
+  --bord1:  #e5e9f0;
+  --bord2:  #d4dae4;
+  --chip:   #eef2f7;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  background: var(--bg);
+  color: var(--text1);
+  line-height: 1.5;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+}
+
+.centered { display: flex; align-items: center; justify-content: center; padding: 2rem; min-height: 100vh; }
+
+.brand-mark {
+  width: 44px; height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--blue) 0%, var(--indigo) 100%);
+  color: white;
+  display: flex; align-items: center; justify-content: center;
+  font-weight: 800; font-size: 22px;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, .25);
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--bord1);
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 380px;
+  width: 100%;
+  box-shadow: 0 10px 30px -8px rgba(15, 23, 42, .08);
+}
+
+.brand { text-align: center; margin-bottom: 1.5rem; }
+.brand .brand-mark { margin: 0 auto 1rem; }
+.brand h1 { font-size: 22px; font-weight: 800; letter-spacing: -.3px; }
+.brand p { font-size: 12.5px; color: var(--text2); margin-top: 4px; }
+
+form label { display: block; margin-bottom: 1rem; font-size: 12px; font-weight: 600; color: var(--text2); }
+form input {
+  width: 100%; margin-top: 6px;
+  padding: 10px 12px;
+  border: 1px solid var(--bord2);
+  border-radius: 10px;
+  font: inherit; font-size: 14px; font-weight: 400;
+  outline: none; transition: all .15s;
+  background: white;
+  color: var(--text1);
+}
+form input:focus { border-color: var(--blue); box-shadow: 0 0 0 3px rgba(37, 99, 235, .10); }
+
+form button[type="submit"] {
+  width: 100%;
+  padding: 11px;
+  border: none;
+  border-radius: 10px;
+  background: var(--blue);
+  color: white;
+  font: inherit; font-size: 14px; font-weight: 600;
+  cursor: pointer;
+  transition: all .15s;
+  box-shadow: 0 4px 14px rgba(37, 99, 235, .18);
+}
+form button[type="submit"]:hover { background: var(--blue2); }
+
+.hint { font-size: 11px; color: var(--text3); margin-top: .75rem; text-align: center; }
+.hint code { background: var(--chip); padding: 1px 6px; border-radius: 4px; font-family: 'JetBrains Mono', monospace; }
+.err { color: var(--red); font-size: 12px; margin-top: .625rem; text-align: center; min-height: 18px; font-weight: 500; }
+
+.footer {
+  font-size: 10.5px;
+  color: var(--text3);
+  text-align: center;
+  margin: 1.25rem 0;
+  font-family: 'JetBrains Mono', monospace;
+  letter-spacing: .02em;
+}
+
+/* Dashboard */
+.topbar {
+  background: white;
+  border-bottom: 1px solid var(--bord1);
+  padding: .875rem 1.5rem;
+  display: flex; align-items: center; justify-content: space-between;
+}
+.brand-inline { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; }
+.brand-inline .brand-mark { width: 32px; height: 32px; font-size: 16px; border-radius: 8px; }
+.user { display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--text2); }
+.ghost {
+  background: white; border: 1px solid var(--bord2); color: var(--text2);
+  padding: 6px 14px; border-radius: 8px; cursor: pointer;
+  font: inherit; font-size: 12px; font-weight: 500;
+  transition: all .15s;
+}
+.ghost:hover { border-color: var(--blue); color: var(--blue); }
+
+.container {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 1.5rem;
+  display: flex; flex-direction: column; gap: 1.25rem;
+}
+
+.balance-card {
+  background: linear-gradient(135deg, var(--blue) 0%, var(--indigo) 100%);
+  color: white;
+  border-radius: 16px;
+  padding: 1.75rem 2rem;
+  box-shadow: 0 10px 30px -8px rgba(37, 99, 235, .30);
+}
+.balance-card .lbl { font-size: 12px; opacity: .85; font-weight: 500; letter-spacing: .04em; text-transform: uppercase; }
+.balance-card h2 { font-size: 38px; font-weight: 800; letter-spacing: -.8px; margin: 6px 0 8px; }
+.balance-card .sub { font-size: 12.5px; opacity: .85; font-family: 'JetBrains Mono', monospace; }
+
+.container .card { max-width: none; padding: 1.25rem 1.5rem; }
+.container .card h3 { font-size: 14px; font-weight: 700; margin-bottom: 1rem; }
+
+.tx { width: 100%; border-collapse: collapse; font-size: 13px; }
+.tx th { text-align: left; font-size: 10.5px; text-transform: uppercase; letter-spacing: .06em; color: var(--text2); padding: 8px 0 10px; border-bottom: 1px solid var(--bord1); font-weight: 600; }
+.tx td { padding: 12px 0; border-bottom: 1px solid var(--chip); }
+.tx tr:last-child td { border-bottom: 0; }
+.tx td:last-child { text-align: right; font-family: 'JetBrains Mono', monospace; font-weight: 500; }
+.tx .credit { color: var(--green); }
+.tx .debit  { color: var(--red); }
+.tx .empty  { text-align: center; color: var(--text3); padding: 24px 0; font-style: italic; }
+
+.pill {
+  display: inline-block;
+  font-size: 10px; font-weight: 600;
+  padding: 2px 8px; border-radius: 999px;
+  text-transform: uppercase; letter-spacing: .04em;
+}
+.pill.credit { background: rgba(5, 150, 105, .10); color: var(--green); }
+.pill.debit  { background: rgba(220, 38, 38, .08); color: var(--red); }
+
+/* Suggested features — populated from features.json on dashboard load */
+.features-sub {
+  font-size: 11.5px;
+  color: var(--text2);
+  margin: -.5rem 0 .875rem;
+}
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: .75rem;
+}
+.feature-card {
+  display: flex;
+  align-items: flex-start;
+  gap: .75rem;
+  background: linear-gradient(135deg, rgba(37,99,235,.05), rgba(79,70,229,.05));
+  border: 1px solid var(--bord1);
+  border-radius: 12px;
+  padding: .875rem 1rem;
+  transition: all .15s ease;
+}
+.feature-card:hover {
+  border-color: var(--indigo);
+  box-shadow: 0 6px 16px -8px rgba(79, 70, 229, .25);
+  transform: translateY(-1px);
+}
+.feature-icon {
+  width: 36px; height: 36px;
+  border-radius: 10px;
+  background: white;
+  border: 1px solid var(--bord1);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--indigo);
+  font-size: 18px;
+  flex: 0 0 auto;
+}
+.feature-text { flex: 1; min-width: 0; }
+.feature-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--text1);
+  margin-bottom: 2px;
+}
+.feature-desc {
+  font-size: 11.5px;
+  color: var(--text2);
+  line-height: 1.45;
+}
+
+/* FICO credit-score module — injected by /api/generate-app when the BRD
+   mentions FICO / credit score / creditworthiness. */
+.fico-card .fico-body {
+  display: grid;
+  grid-template-columns: 220px 1fr;
+  gap: 1.5rem;
+  align-items: center;
+}
+.fico-gauge svg { width: 100%; height: auto; display: block; }
+.fico-gauge text {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 42px;
+  font-weight: 800;
+  fill: var(--text1);
+  text-anchor: middle;
+}
+.fico-range {
+  display: flex; justify-content: space-between;
+  font-size: 10.5px; color: var(--text3);
+  font-family: 'JetBrains Mono', monospace;
+  margin-top: -4px; padding: 0 4px;
+}
+.fico-band {
+  display: inline-block;
+  font-size: 11.5px; font-weight: 700;
+  padding: 4px 10px; border-radius: 999px;
+  text-transform: uppercase; letter-spacing: .04em;
+  margin-bottom: 8px;
+}
+.fico-band.fico-exc { background: rgba(5,150,105,.14);  color: #047857; }
+.fico-band.fico-vg  { background: rgba(34,197,94,.14);  color: #15803d; }
+.fico-band.fico-good{ background: rgba(37,99,235,.10);  color: var(--blue); }
+.fico-band.fico-fair{ background: rgba(245,158,11,.16); color: #b45309; }
+.fico-band.fico-poor{ background: rgba(220,38,38,.10);  color: var(--red); }
+.fico-updated {
+  font-size: 11.5px;
+  color: var(--text3);
+  font-family: 'JetBrains Mono', monospace;
+  margin-bottom: .9rem;
+}
+.fico-factors-h {
+  font-size: 10.5px; font-weight: 700;
+  text-transform: uppercase; letter-spacing: .06em;
+  color: var(--text2); margin-bottom: .375rem;
+}
+.fico-factors { list-style: none; padding: 0; margin: 0; }
+.fico-factors li {
+  font-size: 12.5px; color: var(--text2);
+  padding: 3px 0 3px 16px;
+  position: relative; line-height: 1.45;
+}
+.fico-factors li:before {
+  content: '•';
+  color: var(--indigo);
+  position: absolute; left: 4px; top: 1px;
+  font-weight: 700;
+}
+@media (max-width: 600px) {
+  .fico-card .fico-body { grid-template-columns: 1fr; }
+}
+

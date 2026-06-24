@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABC Bank — Sign in</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="centered">
+  <main class="card">
+    <div class="brand">
+      <div class="brand-mark">A</div>
+      <h1>ABC Bank</h1>
+      <p>Secure online banking</p>
+    </div>
+    <form id="loginForm" novalidate>
+      <label>Username
+        <input type="text" id="username" autocomplete="username" required />
+      </label>
+      <label>Password
+        <input type="password" id="password" autocomplete="current-password" required />
+      </label>
+      <button type="submit">Sign in</button>
+      <p class="hint">Demo: <code>demo</code> / <code>demo123</code></p>
+      <p id="err" class="err" role="alert" aria-live="polite"></p>
+    </form>
+  </main>
+  <footer class="footer" id="footer"></footer>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

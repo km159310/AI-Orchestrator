@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ABC Bank — Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@2.44.0/tabler-icons.min.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand-inline">
+      <div class="brand-mark">A</div>
+      <span>ABC Bank</span>
+    </div>
+    <div class="user">
+      <span id="welcome">Welcome</span>
+      <button id="logoutBtn" class="ghost" type="button">Logout</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="balance-card">
+      <p class="lbl">Total balance</p>
+      <h2 id="balance">$0.00</h2>
+      <p class="sub" id="accountInfo">Account •••</p>
+    </section>
+    <section class="card fico-card" id="ficoSection">
+      <h3>
+        <i class="ti ti-chart-arcs" aria-hidden="true" style="color:var(--indigo);margin-right:6px"></i>
+        Credit Score (FICO)
+      </h3>
+      <div class="fico-body">
+        <div class="fico-gauge">
+          <svg viewBox="0 0 200 120" aria-hidden="true">
+            <path d="M20,110 A80,80 0 0,1 180,110" fill="none" stroke="#e5e9f0" stroke-width="14" stroke-linecap="round" />
+            <path id="ficoArcFill" d="M20,110 A80,80 0 0,1 180,110" fill="none" stroke="url(#ficoGrad)" stroke-width="14" stroke-linecap="round" stroke-dasharray="0 251" />
+            <defs>
+              <linearGradient id="ficoGrad" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%"  stop-color="#dc2626" />
+                <stop offset="40%" stop-color="#f59e0b" />
+                <stop offset="70%" stop-color="#2563eb" />
+                <stop offset="100%" stop-color="#059669" />
+              </linearGradient>
+            </defs>
+            <text id="ficoScore" x="100" y="95">---</text>
+          </svg>
+          <div class="fico-range"><span>300</span><span>850</span></div>
+        </div>
+        <div class="fico-meta">
+          <div class="fico-band" id="ficoBand">—</div>
+          <div class="fico-updated" id="ficoUpdated">—</div>
+          <div class="fico-factors-h">Key factors</div>
+          <ul class="fico-factors" id="ficoFactors"></ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h3>Recent transactions</h3>
+      <table class="tx">
+        <thead>
+          <tr><th>Date</th><th>Description</th><th>Type</th><th>Amount</th></tr>
+        </thead>
+        <tbody id="txBody"></tbody>
+      </table>
+    </section>
+
+    <section class="card" id="featuresSection" hidden>
+      <h3>
+        <i class="ti ti-sparkles" aria-hidden="true" style="color:var(--indigo);margin-right:6px"></i>
+        Suggested features
+      </h3>
+      <p class="features-sub">Added live from the SDLC Orchestrator — refresh after picking a new suggestion.</p>
+      <div class="features-grid" id="featuresGrid"></div>
+    </section>
+  </main>
+
+  <footer class="footer" id="footer"></footer>
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
